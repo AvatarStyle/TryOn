@@ -4,7 +4,7 @@
       <div class="title">모델 선택</div>
       <div class="image">
         <input type="file" id="modelInput" style="display: none;" (change)="handleImageChange($event, 'modelPreview', 'modelImg','modelInput')">
-        <img class="preview" id="modelPreview" src='/assets/modelSample.png' alt="모델 예시 이미지 " style="width: 100%;">
+        <img class="preview" id="modelPreview" src='/assets/modelSample.png' alt="모델 예시 이미지 " style="width: 100%; height: auto;">
       </div>
       <div id="btn_group">
         <button class="buttonSet" (click)="imageInput('modelInput')">이미지 불러오기</button>
@@ -14,7 +14,7 @@
       <div class="title">옷 선택</div>
       <div class="image">
         <input type="file" id="clothesInput" style="display: none;" (change)="handleImageChange($event, 'clothesPreview', 'clothesImg','clothesInput')">
-        <img class="preview" id="clothesPreview" src='/assets/clothesSample.png' alt="의상 이미지" style="width: 100%;">
+        <img class="preview" id="clothesPreview" src='/assets/clothesSample.png' alt="의상 이미지" style="width: 100%; height: auto;">
       </div>
       <div id="btn_group">
         <button class="buttonSet" (click)="imageInput('clothesInput')">이미지 불러오기</button>

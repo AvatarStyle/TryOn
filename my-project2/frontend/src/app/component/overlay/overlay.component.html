@@ -1,7 +1,7 @@
 <!--<div class="overlay" id="overlay" #overlay>-->
 <div class="overlay" id="overlay" #overlay (click)="onClickOverlay($event)">
   <div class="section top">
-    <a href="http://localhost:4200/search">의류 검색쿠</a>
+    <a [routerLink]="['/search']">의류 검색</a>
   </div>
   <div class="section bottom">
     <a [routerLink]="['/fitting']">가상 피팅</a>
