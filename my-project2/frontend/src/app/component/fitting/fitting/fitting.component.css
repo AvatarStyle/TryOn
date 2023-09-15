@@ -25,7 +25,7 @@ a{
 
 .input-div{
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .boxes-wrapper{
@@ -189,7 +189,7 @@ footer{
 
 .image-box {
   text-align: center;
-  width :570px;
+  /*width :570px;*/
 }
 /* 기존 .box, .box_avatar, .brandName, .name 클래스는 동일하게 유지 */
 
