@@ -42,7 +42,7 @@ export class PostComponent {
     }
 
 
-    this.http.post('http://localhost:8080/posts', formData, { observe: 'response', responseType: 'text' })
+    this.http.post('https://tryon-399311.du.r.appspot.com/posts', formData, { observe: 'response', responseType: 'text' })
       .subscribe(
         response => {
           if (response.status === 201) {

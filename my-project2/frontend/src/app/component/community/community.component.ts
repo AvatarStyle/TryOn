@@ -23,7 +23,7 @@ export class CommunityComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.http.get(`http://localhost:8080/posts/all`)
+    this.http.get(`https://tryon-399311.du.r.appspot.com/posts/all`)
       .subscribe((data: any[]) => {
         this.posts = data;
         for (let i = 0; i < data.length; i++) {
