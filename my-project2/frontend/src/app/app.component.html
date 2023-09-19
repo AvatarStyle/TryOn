@@ -12,6 +12,9 @@
         <a mat-list-item [routerLink]="['/fitting']" routerLinkActive="router-link-active">
           <span class="label2">가상 피팅</span>
         </a>
+        <a mat-list-item [routerLink]="['/community']" routerLinkActive="router-link-active">
+          <span class="label2">커뮤니티</span>
+        </a>
         <a mat-list-item [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!(signService.username | async)">
           <mat-icon class="icon">input</mat-icon>
           <span class="label2">로그인</span>

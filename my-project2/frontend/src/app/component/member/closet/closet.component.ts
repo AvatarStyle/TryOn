@@ -23,7 +23,7 @@ export class ClosetComponent implements OnInit{
   ngOnInit() {
     this.loadClosetItems();
     const username = localStorage.getItem('username');
-    this.http.get(`http://localhost:8080/posts/${username}`)
+    this.http.get(`https://tryon-399311.du.r.appspot.com/posts/${username}`)
       .subscribe((data: any[]) => {
         this.posts = data;
         for (let i = 0; i < data.length; i++) {
@@ -76,14 +76,14 @@ export class ClosetComponent implements OnInit{
 
   deletePost(id: string) {
     if (confirm('게시물을 삭제하시겠습니까??')) {
-      this.http.delete(`http://localhost:8080/posts/${id}`, {responseType: 'text'})
+      this.http.delete(`https://tryon-399311.du.r.appspot.com/posts/${id}`, {responseType: 'text'})
         .subscribe(
           () => {
             location.reload();
             alert('게시물이 삭제 되었습니다.');
             // 게시물 삭제 후 목록 새로고침
             const username = localStorage.getItem('username');
-            this.http.get(`http://localhost:8080/posts/${username}`)
+            this.http.get(`https://tryon-399311.du.r.appspot.com/posts/${username}`)
               .subscribe((data: any[]) => {
                 this.posts = data;
                 for (let i = 0; i < data.length; i++) {
@@ -105,14 +105,14 @@ export class ClosetComponent implements OnInit{
   }
 
   updatePost(id: string) {
-    this.http.put(`http://localhost:8080/posts/update/${id}`, this.selectedPost, {responseType: 'text'})
+    this.http.put(`https://tryon-399311.du.r.appspot.com/posts/update/${id}`, this.selectedPost, {responseType: 'text'})
       .subscribe(response => {
         console.log(response);
         this.updateFormOpened = false;
         location.reload();
         alert('게시물이 수정 되었습니다.');
         const username = localStorage.getItem('username');
-        this.http.get(`http://localhost:8080/posts/${username}`)
+        this.http.get(`https://tryon-399311.du.r.appspot.com/posts/${username}`)
           .subscribe((data: any[]) => {
             this.posts = data;
             for (let i = 0; i < data.length; i++) {

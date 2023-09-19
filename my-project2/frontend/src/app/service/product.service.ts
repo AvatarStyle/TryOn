@@ -7,7 +7,7 @@ import { ProductDTO } from '../model/product-dto.model';
   providedIn: 'root',
 })
 export class ProductService {
-  private readonly apiUrl = 'http://localhost:8080/api/products/';
+  private readonly apiUrl = 'https://tryon-399311.du.r.appspot.com/api/products/';
 
   constructor(private http: HttpClient) {}
 
