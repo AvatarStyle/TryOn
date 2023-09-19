@@ -56,7 +56,7 @@ export class SignService {
 
 
   login(loginData: any): Observable<any> {
-    return this.http.post('http://localhost:8080/users/login', loginData).pipe(
+    return this.http.post('https://tryon-399311.du.r.appspot.com/users/login', loginData).pipe(
       tap((response: any) => {
         if (response.message === "로그인에 성공 했습니다") {
           const username = response.username;
@@ -83,7 +83,7 @@ export class SignService {
   }
 
   signup(signUpData: any){
-    return this.http.post('http://localhost:8080/users/signup', signUpData, { observe: 'response' }).pipe(
+    return this.http.post('https://tryon-399311.du.r.appspot.com/users/signup', signUpData, { observe: 'response' }).pipe(
       tap((response) => {
         if (response.status === 201 && response.body === "Signup successful") {
           this.location.back();

@@ -9,6 +9,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any>{
-    return this.http.get('http://localhost:8080/products')
+    return this.http.get('https://tryon-399311.du.r.appspot.com/products')
   }
 }

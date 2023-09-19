@@ -12,17 +12,17 @@ export class ClosetService {
   constructor(private http: HttpClient) { }
 
   addToCloset(username: string, productId: string) {
-    const url = 'http://localhost:8080/closet/add'; // API endpoint
+    const url = 'https://tryon-399311.du.r.appspot.com/closet/add'; // API endpoint
     return this.http.post(url, { username, productId });
   }
 
   getCloset(username: string){
-    const url = `http://localhost:8080/closet/${username}`;
+    const url = `https://tryon-399311.du.r.appspot.com/closet/${username}`;
     return this.http.get<ClosetResponse>(url);
   }
 
   removeFromCloset(id: string): Observable<any> {
-    const url = `http://localhost:8080/closet/remove/${id}`; // API endpoint
+    const url = `https://tryon-399311.du.r.appspot.com/closet/remove/${id}`; // API endpoint
     return this.http.delete(url, { responseType: 'text' }); // Expect a text response
   }
 }
