@@ -48,20 +48,23 @@
       </div>
     </ng-container>
 </div>
+<br><br>
 <h1>옷장</h1>
 <div class="boxes-wrapper">
   <ng-container *ngFor="let item of closetItems">
     <div class="box">
       <img [src]="item.imageUrl" alt="{{item.name}}의 이미지" class="item-image">
       <br>
-      <div style="font-weight: bold" class="name">
-        {{ item.name }}
-      </div>
-      <div class="brandName">
-        {{ item.brand }}
-      </div>
-      <div class="price">
-        {{ item.price | number }}원
+      <div class="detail">
+        <div style="font-weight: bold" class="name">
+          {{ item.name }}
+        </div>
+        <div class="brandName">
+          {{ item.brand }}
+        </div>
+        <div class="price">
+          {{ item.price | number }}원
+        </div>
       </div>
       <button (click)="removeItem(item.id)">삭제</button>
     </div>

@@ -188,7 +188,7 @@ footer{
 
 .boxes-wrapper .box {
   flex: 0 0 calc(33% - 10px);
-  max-width: calc(33% - 10px);
+  max-width: calc(28% - 10px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -200,11 +200,11 @@ footer{
 .box, .box_avatar {
   margin-left: 10px;
   margin-bottom: 5px;
-  min-height: 180px;
+  min-height: 150px;
 }
 
 .box img {
-  width: 100%;
+  width: 99%;
   height: auto;
   text-align: center;
 }
@@ -216,7 +216,7 @@ footer{
 .box:hover{
   border: 1px solid darkgray;
   cursor: pointer;
-  transform: scale(1.07);
+  transform: scale(1.00);
   z-index: 1;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
 }
@@ -237,7 +237,8 @@ footer{
 }
 
 .box .brandName,
-.box .name{
+.box .name,
+.box .price{
   max-width: 100%; /* 박스의 가로 크기에 맞춰서 max-width 설정 */
   text-align: left;
   overflow-wrap: break-word; /* 줄바꿈 */
@@ -245,6 +246,11 @@ footer{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-left: 5px;
+}
+
+.box .detail{
+  vertical-align: bottom;
 }
 
 .overlay {
@@ -330,11 +336,13 @@ h3{
   border-bottom-left-radius: 5px;
   margin-right:-4px;
 }
+
 #btn2{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-left:3px;
 }
+
 #btn_group button{
   border: 1px solid black;
   background-color: rgba(0,0,0,0);
