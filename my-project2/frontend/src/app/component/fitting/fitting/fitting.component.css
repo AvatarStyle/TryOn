@@ -34,10 +34,6 @@ a{
   justify-content: center;
 }
 
-.boxes-wrapper{
-  min-height: 600px;
-}
-
 a:hover, a:active{
   color: lightgray;
 }
@@ -183,6 +179,7 @@ footer{
   text-align: left;
   width: 100%;
   height: auto;
+  min-height: 600px;
 }
 
 .boxes-wrapper .box {

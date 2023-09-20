@@ -13,6 +13,10 @@ mat-sidenav-content{
   width: 100%
 }
 
+.mat-app-background {
+  background-color: white !important;
+}
+
 /*왼쪽 메뉴 가로 사이즈 지정*/
 mat-sidenav{
   min-width: 200px;
@@ -30,6 +34,7 @@ html, body{
 
 html, body { height: 100%; }
 body {
+  background-color: white;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -69,7 +74,6 @@ body {
 }
 
 hr {
-
   margin-top: 2.5em;
   margin-bottom: 2.5em;
 }
