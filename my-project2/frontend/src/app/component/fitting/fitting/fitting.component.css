@@ -5,6 +5,11 @@
   height: 100%;
 }
 
+.title{
+  font-size: large;
+  text-align: center;
+}
+
 h2{
   font-family: 'ONEMobile', sans-serif;
   font-weight: bold;
