@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {ClosetService} from "../../../service/closet.service";
 import {ProductService} from "../../../service/product.service";
 import {forkJoin} from "rxjs";
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-fitting',
@@ -81,9 +82,13 @@ export class FittingComponent implements OnInit{
       const formData: FormData = new FormData();
       formData.append('modelImage', this.modelImg);
       formData.append('clothesImage', this.clothesImg);
-      this.http.post('/fitting/upload', formData).subscribe((event) => {
-        console.error("aa");
-        console.error(formData);
+      this.http.post('/fitting/upload', formData,{responseType: 'blob'}).subscribe((response: Blob) => {
+
+        // Blob 데이터를 파일로 다운로드
+        const blobUrl = window.URL.createObjectURL(response);
+        this.responseImage =blobUrl;
+        // Blob 데이터를 "image/png" MIME 타입으로 처리
+        this.openImageDialog();
       });
     }
   }
@@ -92,7 +97,7 @@ export class FittingComponent implements OnInit{
     let imagePath = this.modelImg.name +"_"+ this.clothesImg.name
     const dialogRef = this.dialog.open(ResultComponent,{
       width: '80%',
-      data: { generatedIMG : imagePath }
+      data: { generatedIMG : this.responseImage }
     });
   }
 

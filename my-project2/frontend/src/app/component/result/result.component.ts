@@ -8,7 +8,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent {
-  imagePath;
+  generatedIMG;
   public imageExists = false;
   checkingImage;
   loadingImage;
@@ -21,7 +21,7 @@ export class ResultComponent {
   ) 
   {
     //위치 설정
-    this.imagePath = "assets/generateIMG/" + data.generatedIMG;
+    this.generatedIMG = data.generatedIMG;
     this.checkImage();
   }
   
@@ -33,8 +33,8 @@ export class ResultComponent {
     const checkInterval = setInterval(() => {
       
       try {
-        img.src = this.imagePath;
 
+        img.src = this.generatedIMG;
 
         img.onload = () => {
           this.imageExists = true;
@@ -59,7 +59,7 @@ export class ResultComponent {
   }
 
   async downloadImage() {
-    this.http.get(this.imagePath, { responseType: 'blob' }).subscribe((response) => {
+    this.http.get(this.generatedIMG, { responseType: 'blob' }).subscribe((response) => {
       this.saveImageLocally(response);
     });
   }
