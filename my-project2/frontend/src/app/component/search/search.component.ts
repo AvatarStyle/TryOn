@@ -40,7 +40,9 @@ export class SearchComponent {
     this.itemService.naverSearch(query).subscribe((naverResults: any) => {
       console.log(naverResults); // 로그에 결과 출력 (또는 다른 처리)
       // 원하는 형태로 데이터 변환 후 apiResults에 추가 또는 별도의 변수에 저장
-      const transformedNaverItems = naverResults.items.map(item => ({
+      const transformedNaverItems = naverResults.items
+        .filter(item => item.category1 === '패션의류')
+        .map(item => ({
         ...item,
         image: item.image,
         title: item.title.replace(/<b>|<\/b>/g, ''),
