@@ -68,8 +68,13 @@ body {
 .preview{
   height: 600px;
   width:450px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 11%;
+
+  width: 100%; 
+  height: auto; 
+  min-width: 270px; 
+  min-height: 270px;
 
 }
 
