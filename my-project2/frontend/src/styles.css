@@ -1,27 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
-/*메뉴 반응형 처리*/
-mat-sidenav-container{
-  display: flex;
-  flex: 1;
+a{
+  text-decoration: none;
+  color: white;
 }
-
-/*상단 메뉴 꽉 차게*/
-mat-sidenav-content{
-  width: 100%
-}
-
-.mat-app-background {
-  background-color: white !important;
-}
-
-/*왼쪽 메뉴 가로 사이즈 지정*/
-mat-sidenav{
-  min-width: 200px;
-}
-
 
 .item-image{
   border-radius:11%;
@@ -37,6 +20,10 @@ body {
   background-color: white;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a{
+  height: auto;
 }
 
 .title {

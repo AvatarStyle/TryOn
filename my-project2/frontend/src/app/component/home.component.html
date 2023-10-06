@@ -1,76 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Try on Me</title>
-  <link rel="stylesheet" href="home.component.css">
-</head>
-
-<body>
- 
-  <header>
-    <div class="headerWrap">
-      <div class="headerTop">
-        <div class="section_left">
-        <ul>
-          <li>
-            <a herf="#">
-              <span>COMMUNITY</span>
-            </a>
-          </li>
-          <li>
-            <a herf="#">
-              <span>가상 피팅</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-        <div class="section_right">
-        <ul>
-          <li>
-            <a herf="#">
-              <span>검색</span>
-            </a>
-          </li>
-          <li>
-            <a herf="#">
-              <span>로그인</span>
-            </a>
-          </li>
-          <li>
-            <a herf="#">
-              <span>마이페이지</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-        <div class="logo">
-          <a href="#">
-            <img class="logo_top" src="../../assets/tom.jpg" width="500px">
-          </a>
-        </div>
-      </div>
-      <div class="division-line"></div>
-    </div>
-  </header>
-
-  <div class="virtualfitting">
-    <div class="slide_viewer">
-      <div class="slide_container">
-        <div class="slide_wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms">
-          <div class="slide_img" style="width: 1268px; margin-right: 10px;">
-            <div class="ex-base-product">
-              <ul class="fittingsample">
-                  <a herf="#">
-                    <img src="../../assets/banner.PNG" width="1000px">
-                  </a>                
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<div class="logo">
+  <a href="#">
+    <img class="logo_top" src="/assets/icons/app-icon.png" width="500px">
+  </a>
+</div>
+<div class="bannerDiv">
+  <a herf="#">
+    <img class="banner" [src]="currentImage" width="20%">
+  </a>
+</div>
+        
 
   <div class="division-line"></div>
 
@@ -81,7 +19,3 @@
       </div>
     </div>
   </div>
-
-
-</body>
-</html>

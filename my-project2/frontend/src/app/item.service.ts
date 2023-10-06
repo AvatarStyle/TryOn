@@ -7,8 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ItemService {
-  private backendUrl = 'https://tryon-399311.du.r.appspot.com/api';
-  //private backendUrl = 'http://localhost:8080/api'; // 백엔드 API 엔드포인트 URL
+  private backendUrl = 'http://localhost:8080/api'; // 백엔드 API 엔드포인트 URL
   private readonly clientId = 'pyKxHNJQD2r5QL18dwff';
   private readonly clientSecret = 'Is26TZ2Tes';
 

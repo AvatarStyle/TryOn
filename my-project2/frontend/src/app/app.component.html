@@ -1,94 +1,51 @@
-<div *ngIf="isHomeComponent">
-  <router-outlet (activate)="onActivate($event)"></router-outlet>
+<div class = "description" >
+  <div *ngIf="TopNav" class="TopNav">
+      <a  [routerLink]="['/']">
+        <div class="label2">홈</div>
+      </a>
+      <serch-bar>
+      </serch-bar>
+  </div>
+  <div class="app-data">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <div id="BottomNav" *ngIf="BottomNav">
+    <a [routerLink]="['/']" routerLinkActive="router-link-active">
+      <div class="NavBox">
+        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <div class="BottomNavText">홈</div>      
+      </div>
+    </a>
+    <a [routerLink]="['/fitting']" routerLinkActive="router-link-active">
+      <div class="NavBox">
+        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <div class="BottomNavText">가상피팅</div>
+      </div>
+      
+    </a>
+    <a  [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
+      
+      <div class="NavBox">
+        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <div class="BottomNavText">로그인</div>
+      </div>
+    </a>
+    <a  [routerLink]="['/myinfo']" routerLinkActive="router-link-active" *ngIf="signService.isSignIn()">
+      <div class="NavBox">
+        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <div class="BottomNavText">마이</div>
+      </div>
+    </a>
+    <a  [routerLink]="['/']" routerLinkActive="router-link-active">
+      <div class="NavBox">
+        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <div class="BottomNavText">커뮤니티</div>
+      </div>
+    </a>
+  </div>
 </div>
-<div class="wrapper" *ngIf="!isHomeComponent">
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav role="navigation" >
-      <mat-nav-list>
-        <a mat-list-item [routerLink]="['/']">
-          <mat-icon class="icon">home</mat-icon>
-          <span class="label2">홈</span>
-        </a>
-        <a mat-list-item [routerLink]="['/fitting']" routerLinkActive="router-link-active">
-          <span class="label2">가상 피팅</span>
-        </a>
-        <a mat-list-item [routerLink]="['/community']" routerLinkActive="router-link-active">
-          <span class="label2">커뮤니티</span>
-        </a>
-        <a mat-list-item [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!(signService.username | async)">
-          <mat-icon class="icon">input</mat-icon>
-          <span class="label2">로그인</span>
-        </a>
-        <a mat-list-item [routerLink]="['/signup']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
-          <mat-icon class="icon">input</mat-icon>
-          <span class="label2">회원가입</span>
-        </a>
-        <a mat-list-item [routerLink]="['/closet']" routerLinkActive="router-link-active" *ngIf="(signService.username | async) as username">
-          <mat-icon class="icon">person</mat-icon>
-          <span class="label2"> {{ username || '사용자' }} </span>
-        </a>
-        <a (click)="signService.logout()" mat-list-item *ngIf="(signService.username | async)" >
-          <mat-icon class="icon">input</mat-icon>
-          <span class="label2">로그아웃</span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <mat-toolbar color="primary" *ngIf="!isHomeComponent">
-      <div fxHide.gt-xs>
-          <button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </div>
-        <div>
-          <a routerLink="/">
-            <mat-icon class="icon">home</mat-icon>
-            <span class="label1">홈</span>
-          </a>
-        </div>
-        <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-          <ul fxLayout fxLayoutGap="20px" class="navigation-items">
-            <a [routerLink]="['/community']">
-              <span class="label1">커뮤니티</span>
-            </a>
-            <a [routerLink]="['/fitting']">
-              <span class="label1">가상 피팅</span>
-            </a>
-            <a [routerLink]="['/manage']">
-              <span class="label1">상품 등록</span>
-            </a>
-            <li *ngIf="(signService.username | async) as username" class="label1">
-              <a [routerLink]="['/closet']">
-                {{ username || '사용자' }}
-              </a>
-            </li>
-            <li *ngIf="(signService.username | async)" class="label1">
-              <a (click)="signService.logout()">로그아웃</a>
-            </li>
-            <li *ngIf="!(signService.username | async)" class="label1">
-              <a [routerLink]="['/signin']">
-                <mat-icon class="icon">input</mat-icon>
-                <span class="label1">로그인</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </mat-toolbar>
-      <main>
-        <app-head></app-head>
-        <div class = "description" >
-        <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
-        </div>
-      </main>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  <footer *ngIf="!isHomeComponent">
-    <div>
-      <span><a href="https://www.hknu.ac.kr">Avatar-S</a></span>
-    </div>
-    <div>
-      <a href="https://www.hknu.ac.kr">Copyroght AvatarS Team</a>
-    </div>
-  </footer>
-</div>
+
+
 

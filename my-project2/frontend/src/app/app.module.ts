@@ -1,4 +1,4 @@
-import {NgModule, NO_ERRORS_SCHEMA, isDevMode} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +38,6 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 import { ClosetComponent } from './component/member/closet/closet.component';
 import { CommunityComponent } from './component/community/community.component';
 import { PostComponent } from './component/community/post/post.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -79,13 +78,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
         MatInputModule,
         IonicStorageModule,
         MatSidenavModule,
-        MatSnackBarModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-          enabled: !isDevMode(),
-          // Register the ServiceWorker as soon as the application is stable
-          // or after 30 seconds (whichever comes first).
-          registrationStrategy: 'registerWhenStable:30000'
-        })
+        MatSnackBarModule
     ],
   exports: [
     ReactiveFormsModule
