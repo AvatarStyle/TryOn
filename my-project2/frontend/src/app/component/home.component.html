@@ -1,112 +1,87 @@
-<div class="container" (click)="overlayComponent.showOverlay(); $event.stopPropagation();">
-  <h1 class="center-text">Avatar Fitting</h1>
-  <div class="slider">
-      <img
-        *ngFor="let image of imageList; let i = index"
-        [src]="image"
-        [ngStyle]="{'opacity': i === currentImageId ? '1' : '0', 'position': i === currentImageId ? 'static' : 'absolute'}"
-        [ngClass]="{'shadow-img': i === currentImageId }"
-        [alt]="'이미지 ' + (i + 1)"
-      />
-  </div>
-</div>
-<app-overlay #overlayComponent></app-overlay>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Try on Me</title>
+  <link rel="stylesheet" href="home.component.css">
+</head>
 
-<!--
-<link rel="stylesheet" href="home.component.css">
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-<div class="imagelist"
-     *ngFor="let image of imageList"
-     [ngStyle] = "{ 'background-image' : 'url(' + image + ')'}"
-     [class.unselect] = "image !== currentImage"
-     [@changeImage] = "image === currentImage ? 'secondAction' : 'firstAction'">
+<body>
+ 
+  <header>
+    <div class="headerWrap">
+      <div class="headerTop">
+        <div class="section_left">
+        <ul>
+          <li>
+            <a herf="#">
+              <span>COMMUNITY</span>
+            </a>
+          </li>
+          <li>
+            <a herf="#">
+              <span>가상 피팅</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        <div class="section_right">
+        <ul>
+          <li>
+            <a herf="#">
+              <span>검색</span>
+            </a>
+          </li>
+          <li>
+            <a herf="#">
+              <span>로그인</span>
+            </a>
+          </li>
+          <li>
+            <a herf="#">
+              <span>마이페이지</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        <div class="logo">
+          <a href="#">
+            <img class="logo_top" src="../../assets/tom.jpg" width="500px">
+          </a>
+        </div>
+      </div>
+      <div class="division-line"></div>
+    </div>
+  </header>
 
-  <div class="arrow">
-    <span class="arrowLeft"
-          [class.arrowEnd] = "image === imageList[0]"
-          (click)="imageSlideLeft()"><
-      </span>
-    <span class="arrowRight"
-          [class.arrowEnd] = "image === imageList[imageLength -1]"
-          (click)="imageSlideRight()">>
-      </span>
+  <div class="virtualfitting">
+    <div class="slide_viewer">
+      <div class="slide_container">
+        <div class="slide_wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms">
+          <div class="slide_img" style="width: 1268px; margin-right: 10px;">
+            <div class="ex-base-product">
+              <ul class="fittingsample">
+                  <a herf="#">
+                    <img src="../../assets/banner.PNG" width="1000px">
+                  </a>                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="placer">
-  <div class="dot" *ngFor="let image of imageList"
-       [class.selected] = "image === currentImage"
-  ></div>
-</div>
-<br>
-<h3 style="margin-left: 5px;">회원들의 아바타</h3>
-<div class="container">
-  <div class="box_avatar" routerLink="/avatarpage">
-    <img src="assets/avatar1.jpg" style="width: 280px; height: 450px;">
-    <div class="uid">
-      황세동
-    </div>
-    <div class="title">
-      캐주얼한 맥코트는 이렇게
-    </div>
-  </div>
-</div>
-<h3 style="margin-left: 5px">추천하는 상품목록</h3>
-<div class="container">
-  <div class="box" routerLink="/detail">
-    <img src="assets/1.jpg" style="width: 280px; height: 260px;">
-    <div class="brandName">
-      1993STUDIO
-    </div>
-    <div class="name">
-      [LG트윈스] 빈티지 바시티 자켓_블랙
-    </div>
-  </div>
-  <div class="box">
-    <img src="assets/2.jpg" style="width: 280px; height: 260px;">
-    <div class="brandName">
-      1993STUDIO
-    </div>
-    <div class="name">
-      [LG트윈스] 빈티지 바시티 자켓_네이비
-    </div>
-  </div>
-  <div class="box">
-    <img src="assets/3.jpg" style="width: 280px; height: 260px;">
-    <div class="brandName">
-      라퍼지스토어
-    </div>
-    <div class="name">
-      [PACKAGE]시티보이 빅오버 스트라이프 옥스포드 셔츠_6 Color
-    </div>
-  </div>
-  <div class="box">
-    <img src="assets/4.jpg" style="width: 280px; height: 260px;">
-    <div class="brandName">
-      쿠어
-    </div>
-    <div class="name">
-      하프 셔링 셔츠_그레이
-    </div>
-  </div>
-  <div class="box">
-    <img src="assets/5.jpg" style="width: 280px; height: 260px;">
-    <div class="brandName">
-      쿠어
-    </div>
-    <div class="name">
-      하프 셔링 셔츠_라이트 블루
-    </div>
-  </div>
-  <div class="box">
-    <img src="assets/6.jpg" style="width: 280px; height: 260px;">
-    <div class="brandName">
-      무신사 스탠다드
-    </div>
-    <div class="name">
-      베이식 블레이저
-    </div>
-  </div>
-</div>
--->
 
+  <div class="division-line"></div>
+
+  <div class="footer">
+    <div class="footWrap">
+      <div class="foot">
+        <h3 class="footinfo">Try on Me</h3>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
