@@ -1,27 +1,233 @@
-/*세로 컨텐츠 반응형 처리*/
+.headerWrap{
+  position: relative;
+  min-width: 980px;
+}
+
+.headerTop {
+  width: 100%;
+  position: relative;
+  max-width: 1512px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.section_left {
+  float: left;
+  padding-top: 10px;
+}
+
+.section_left ul {
+  display: inline-block;
+  /*display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;*/
+}
+
+.section_left ul li {
+  display: inline-block;
+}
+
+.section_left ul li a {
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: bolder;
+  color: #000;
+}
+
+.section_left ul li a span {
+  font-size: 15px;
+  font-weight: bolder;
+  padding-left: 3px;
+  color: #000000;
+}
+
+.section_right {
+  float: right;
+  padding-top: 10px;
+}
+
+.section_right ul {
+  display: inline-block;
+}
+
+.section_right ul li {
+  display: inline-block;
+}
+
+.section_right ul li a {
+  padding: 0 0 0 10px;
+  font-size: 10px;
+  font-weight: bolder;
+  color: #000;
+}
+
+.section_right ul li a span {
+  font-size: 15px;
+  font-weight: bolder;
+  padding-left: 3px;
+  color: #000;
+}
+
+.logo {
+  clear: both;
+  box-sizing: border-box;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.logo a{
+  text-decoration: none;
+  color: #000;
+}
+
+.logo a img {
+  max-height: 100px;
+}
+
+.division-line{
+  border-top: 1px solid #b3b3b3;
+  margin: 5px 0px;
+}
+
+.virtualfitting{
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.slide_container{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slide_img{
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ec-base-product {
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto 100px;
+}
+
+.virtualfitting ul {
+  width: 100%;
+  float: center;
+}
+
+.virtualfitting ul a{
+  text-decoration: none;
+  color: #000;
+}
+
+.footer{
+  margin: 0 auto;
+  font-size: 11px;
+  float: right
+}
+
+.footWrap {
+  max-width: 1512px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  color: #999;
+  line-height: 2;
+  margin: 0 auto;
+}
+
+.footWrap foot{
+  width: 33.3%;
+  float: right;
+  text-align: right
+}
+
+.footWrap h3 footinfo {
+  color: #000;
+  margin-bottom: 10px;
+}
+/*.container{
+  width: 1270px;
+  margin: 0 auto;
+  position: relative;
+}
+*/
+/*.center-img{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+
+  color: white;
+  font-size: 60px;
+  font-family: ONEMobile;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  
+
+  white-space: nowrap;
+  overflow-wrap: normal;
+
+  cursor: pointer;
+
+  /*BackgroundSetting
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1{
+  position:absolute;
+  left: -2000px;
+}
+/*
+세로 컨텐츠 반응형 처리
 .wrapper{
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-/*메뉴 반응형 처리*/
+메뉴 반응형 처리
 mat-sidenav-container{
   display: flex;
   flex: 1;
 }
 
-/*상단 메뉴 꽉 차게*/
+상단 메뉴 꽉 차게
 mat-sidenav-content{
   width: 100%
 }
 
-/*왼쪽 메뉴 가로 사이즈 지정*/
+왼쪽 메뉴 가로 사이즈 지정
 mat-sidenav{
   min-width: 200px;
 }
 
-/*메뉴 author 태그 스타일 지정, 최초: 화이트, 클릭: 회색*/
+메뉴 author 태그 스타일 지정, 최초: 화이트, 클릭: 회색
 a{
   text-decoration: none;
   color: white;
@@ -31,7 +237,7 @@ a:hover, a:active{
   color: lightgray;
 }
 
-/*상단 메뉴 스타일 지정*/
+상단 메뉴 스타일 지정
 .navigation-items{
   list-style: none;
   padding: 0;
@@ -39,7 +245,7 @@ a:hover, a:active{
   cursor: pointer;
 }
 
-/*상단 메뉴 아이콘 스타일 지정*/
+상단 메뉴 아이콘 스타일 지정
 .icon{
   display: inline-block;
   height: 25px;
@@ -49,7 +255,7 @@ a:hover, a:active{
   width: 15%;
 }
 
-/*풋터 스타일 지정*/
+풋터 스타일 지정
 footer{
   padding: 10px 0 10px 0;
   font-size: 12px;
@@ -89,7 +295,7 @@ footer{
 
 .slider img{
   position: absolute;
-  /*max-width: 30%;*/
+  max-width: 30%;
   width: auto;
   height: 100vh;
   object-fit: cover;
@@ -148,6 +354,8 @@ footer{
 
 
 .container{
+  width: 1270px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -169,10 +377,10 @@ footer{
 
   cursor: pointer;
 
-  /*BackgroundSetting
+  BackgroundSetting
   background-color: white;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .overlay{
@@ -250,6 +458,7 @@ h3{
   font: 20px/40px Arial, sans-serif;
 }
 
+*/
 @font-face {
   font-family: 'ONEMobile';
   src: url('/assets/fonts/ONEMobileBold.ttf') format('truetype');
