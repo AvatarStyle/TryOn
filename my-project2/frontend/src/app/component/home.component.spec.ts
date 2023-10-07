@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let products=[];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

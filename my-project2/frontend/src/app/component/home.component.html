@@ -1,21 +1,94 @@
-<div class="logo">
-  <a href="#">
-    <img class="logo_top" src="/assets/icons/app-icon.png" width="500px">
-  </a>
-</div>
 <div class="bannerDiv">
   <a herf="#">
-    <img class="banner" [src]="currentImage" width="20%">
+    <img class="banner" [src]="currentImage">
   </a>
 </div>
-        
 
-  <div class="division-line"></div>
 
-  <div class="footer">
-    <div class="footWrap">
-      <div class="foot">
-        <h3 class="footinfo">Try on Me</h3>
+<div class="category">
+  <div class="categoryName">인기 상품</div>
+  <div class="itemList">
+    <div class="product" *ngFor="let post of [1,2,3,4]">
+      <img class=productImg src="/assets/4.jpg">
+      <div class="productName">
+        예시 상품 
+      </div>
+      <div class="producttext">
+        멘트 있으면 추가
+      </div>
+    </div>
+
+    <div class="product" >
+      <img class=productImg src="">
+      <div class="productName">
+      예시 입력 
       </div>
     </div>
   </div>
+</div>
+<hr>
+
+<div class="category">
+  <div class="categoryName">인기 글</div>
+  <div class="itemList">
+    <div class="post" *ngFor="let post of [1,2,3,4,5]" >
+      <img class=postImg [src]="'/assets/brand/'+post+'.png'">
+      <div class="postName">
+        예시 브랜드 
+      </div>
+      <div class="brandtext">
+        하트나 해시태그 같은 정보들 있으면 추가
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="category">
+  <div class="categoryName">인기 브랜드</div>
+  <div class="itemList">
+    <div class="brand" *ngFor="let brand of brands1" >
+      <div class="brandContainer">
+        <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+
+      </div>
+      <div class="brandName">
+        {{brand.name}}
+      </div>
+    </div>
+  </div>
+  <div class="itemList">
+    <div class="brand" *ngFor="let brand of brands2" >
+      <div class="brandContainer">
+        <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+      
+      </div>
+      
+      <div class="brandName">
+        {{brand.name}}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="category">
+  <div class="categoryName">추천 의류</div>
+  <div class="itemList">
+    <div class="propose" *ngFor="let post of [1,2,3,4,5]" >
+      <img class=proposeImg src="/assets/4.jpg">
+      <div class="proposeName">
+        예시 브랜드 
+      </div>
+      <div class="proposetext">
+        멘트 있으면 추가
+      </div>
+    </div>
+  </div>
+</div>
+

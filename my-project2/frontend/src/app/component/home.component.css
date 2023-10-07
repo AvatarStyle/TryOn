@@ -1,3 +1,69 @@
+.banner{
+  height:675px;
+}
+
+.category{
+  margin: 20px;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
+
+.categoryName{
+  width: 100%;
+  font-size: 24px;
+  margin: 15px;
+  margin-bottom: 30px;
+}
+
+.product{
+  flex:1;
+}
+
+.itemList{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+
+.productImg{
+  width: 220px;
+  height: px;
+  border-radius:11%;
+  
+}
+
+.brandContainer{
+  width: 220px;
+  height: 110px;
+  border-radius:11%;
+
+  background-color: #EFEFEF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brandImg{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.postImg{
+  width: 220px;
+  height: 240px;
+  border-radius:11%;
+}
+
+.proposeImg{
+  width: 220px;
+  height: 240px;
+
+  border-radius:11%;
+}
+
 .headerWrap{
   position: relative;
   min-width: 980px;

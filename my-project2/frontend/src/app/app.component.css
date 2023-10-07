@@ -1,5 +1,6 @@
 /*메뉴 author 태그 스타일 지정, 최초: 화이트, 클릭: 회색*/
 
+
 .description{
   display: flex;
   position: relative;
@@ -11,6 +12,19 @@
   background-color: white;
 
 }
+
+
+.Title{
+  font-size: 36px;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
 
 .app-data{
   width:100%;
@@ -38,7 +52,7 @@
   width: 100%;
   position:sticky;
   top:0;
-  height: 60px;
+  height: 80px;
   border-bottom: solid 4px black;
   z-index: 1;
   background-color: white;

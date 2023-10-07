@@ -69,3 +69,9 @@ hr {
   margin-top: 2.5em;
   margin-bottom: 2.5em;
 }
+
+
+
+.mat-typography{
+  line-height: none;
+}
