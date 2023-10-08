@@ -49,8 +49,8 @@ export class HomeComponent implements OnInit, OnDestroy{
     {path:'1',name:'필루미네이트' },
     {path:'2',name:'나이키' },
     {path:'3',name:'브라운 브레스' },
-    {path:'4',name:'폴로' },
-    {path:'5',name:'반스' },
+    {path:'4',name:'반스' },
+    {path:'5',name:'폴로' },
 
     ];
   brands2=[

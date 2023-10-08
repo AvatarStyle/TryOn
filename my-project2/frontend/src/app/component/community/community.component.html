@@ -10,7 +10,7 @@
       <img [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]" class="d-block w-100"/>
       <!-- Previous and Next Buttons -->
       <div class="button">
-        <button (click)="previous(postIndex)" class="overlay-button"><</button>
+        <button (click)="previous(postIndex)" class="overlay-button"></button>
         <button (click)="next(postIndex, post.imagePaths.length)"class="overlay-button">></button>
       </div>
       <h2>{{ post.username }}</h2>
