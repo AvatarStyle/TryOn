@@ -22,7 +22,7 @@
 
     <div class="product" >
       <div class="imgContainer">
-        <img class=productImg src="">
+      <img class=productImg src="">
       </div>
 
       <div class="productName">
@@ -56,10 +56,14 @@
   <div class="categoryName">인기 브랜드</div>
   <div class="itemList">
     <div class="brand" *ngFor="let brand of brands1" >
-      <div class="imgContainer" class="brandContainer">
-        <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+        <div class="brandContainer">
+          <div class="brandDiv">
+            <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+          </div>
+        </div>
 
-      </div>
+
+
       <div class="brandName">
         {{brand.name}}
       </div>
@@ -67,10 +71,12 @@
   </div>
   <div class="itemList">
     <div class="brand" *ngFor="let brand of brands2" >
-      <div class="imgContainer"  class="brandContainer">
-        <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
-      
-      </div>
+      <div class="brandContainer">
+        <div class="brandDiv">
+          <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+        </div>
+     </div>
+
 
       <div class="brandName">
         {{brand.name}}
