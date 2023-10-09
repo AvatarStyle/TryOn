@@ -1,16 +1,19 @@
-<div class = "description" >
+
+
+<div class="app">
   <div *ngIf="TopNav" class="TopNav">
-      <a [routerLink]="['/']">
-        <div class="Title">TryOnMe</div>
-      </a>
-      <serch-bar>
-      </serch-bar>
+    <a [routerLink]="['/']">
+      <div class="Title">TryOnMe</div>
+    </a>
+    <serch-bar>
+    </serch-bar>
   </div>
-  <div class="app-data">
-    <router-outlet></router-outlet>
+  <div class = "description" >
+
+    <div class="app-data">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-
-
   <div id="BottomNav" *ngIf="BottomNav">
     <a [routerLink]="['/']" routerLinkActive="router-link-active">
       <div class="NavBox">
@@ -45,6 +48,3 @@
     </a>
   </div>
 </div>
-
-
-
