@@ -7,6 +7,10 @@ h1{
   text-align: center;
 }
 
+.addContents{
+  float: left;
+}
+
 .boxes-wrapper{
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +26,8 @@ h1{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
+  text-align: left;
 }
 
 .button{

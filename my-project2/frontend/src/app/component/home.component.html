@@ -13,7 +13,7 @@
         <img class=productImg src="/assets/4.jpg">
       </div>
       <div class="productName">
-        예시 상품 
+        예시 상품
       </div>
       <div class="producttext">
         멘트 있으면 추가
@@ -26,19 +26,30 @@
       </div>
 
       <div class="productName">
-      예시 입력 
+      예시 입력
       </div>
     </div>
   </div>
 </div>
 <hr>
-
 <div class="category">
   <div class="categoryName">인기 글</div>
+
   <div class="itemList">
+    <ng-container *ngFor="let post of posts; let postIndex = index">
+      <div class="post">
+        <div class="imgContainer">
+          <img [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]" class="postImg"/>
+        </div>
+        <h5 class="postName">{{ post.username }}</h5>
+        <h7 class="postText">{{ post.title }}</h7>
+      </div>
+    </ng-container>
+  </div>
+  <!--<div class="itemList">
     <div class="post" *ngFor="let post of [1,2,3,4,5]" >
       <div class="imgContainer">
-        <img class=postImg [src]="'/assets/brand/'+post+'.png'">  
+        <img class=postImg [src]="'/assets/brand/'+post+'.png'">
       </div>
       <div class="postName">
         예시 포스트
@@ -47,7 +58,7 @@
         하트나 해시태그 같은 정보들 있으면 추가
       </div>
     </div>
-  </div>
+  </div>-->
 </div>
 
 <hr>
@@ -81,7 +92,7 @@
       <div class="brandName">
         {{brand.name}}
       </div>
-      
+
     </div>
   </div>
 </div>

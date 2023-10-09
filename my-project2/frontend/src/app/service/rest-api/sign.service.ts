@@ -92,7 +92,7 @@ export class SignService {
     );
   }
 
-  isSignIn(): boolean{
-    return true;
+  isSignIn(): number {
+    return localStorage.getItem('username') ? 1 : 0;
   }
 }

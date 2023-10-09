@@ -42,6 +42,11 @@ export class SigninComponent{
         },
         (error) => {
           console.error(error);
+          this.snackBar.open('올바르지 않은 입력값입니다(로그인 실패)','',{
+            duration: 1000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
         }
       );
     }

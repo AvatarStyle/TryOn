@@ -12,7 +12,7 @@
 .description{
   background-color: white;
   min-height: 100vh;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 
@@ -52,7 +52,7 @@ a{
   display: flex;
   justify-content: space-between;
   max-height: 140px;
-  z-index: 1; 
+  z-index: 1;
   background-color: white;
 }
 

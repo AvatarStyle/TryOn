@@ -36,6 +36,7 @@ export class ClosetComponent implements OnInit{
     this.closetService.removeFromCloset(itemId).subscribe(
       () => {
         // 성공적으로 제거된 후 옷장 아이템 리스트 갱신
+        alert('상품이 삭제 되었습니다.');
         this.loadClosetItems();
       },
       error => console.error(error)

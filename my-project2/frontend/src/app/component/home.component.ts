@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.imageRoot + "제목 7.png"
   ]
 
-  
+
   currentIndices = [];
   posts = [];
   products=[];
@@ -76,18 +76,14 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.getImage(this.currentImageId);
     this.autoSlide();
 
-    /*
     this.http.get(`https://tryon-399311.du.r.appspot.com/posts/all`)
     .subscribe((data: any[]) => {
-
       console.log(data);
       this.posts = data;
       for (let i = 0; i < data.length; i++) {
         this.currentIndices[i] = 0;
       }
     });
-
-    */
   }
 
   ngOnDestroy(): void{
@@ -126,5 +122,17 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   onMouseLeave(){
     this.overlayComponent.hideOverlay();
+  }
+
+  previous(postIndex: number) {
+    if (this.currentIndices[postIndex] > 0) {
+      this.currentIndices[postIndex]--;
+    }
+  }
+
+  next(postIndex: number, postImageLength: number) {
+    if (this.currentIndices[postIndex] < postImageLength - 1) {
+      this.currentIndices[postIndex]++;
+    }
   }
 }

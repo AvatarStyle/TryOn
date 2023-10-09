@@ -1,5 +1,3 @@
-
-
 <div class="app">
   <div *ngIf="TopNav" class="TopNav">
     <a [routerLink]="['/']">
@@ -18,7 +16,7 @@
     <a [routerLink]="['/']" routerLinkActive="router-link-active">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
-        <div class="BottomNavText">홈</div>      
+        <div class="BottomNavText">홈</div>
       </div>
     </a>
     <a [routerLink]="['/fitting']" routerLinkActive="router-link-active">
@@ -26,21 +24,21 @@
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
         <div class="BottomNavText">가상피팅</div>
       </div>
-      
+
     </a>
-    <a  [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="signService.isSignIn()">
+    <a [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
         <div class="BottomNavText">로그인</div>
       </div>
     </a>
-    <a  [routerLink]="['/myinfo']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
+    <a [routerLink]="['/closet']" routerLinkActive="router-link-active" *ngIf="signService.isSignIn()">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
         <div class="BottomNavText">마이</div>
       </div>
     </a>
-    <a  [routerLink]="['/']" routerLinkActive="router-link-active">
+    <a [routerLink]="['/community']" routerLinkActive="router-link-active">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
         <div class="BottomNavText">커뮤니티</div>
