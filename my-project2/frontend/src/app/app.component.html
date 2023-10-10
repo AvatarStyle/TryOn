@@ -3,11 +3,14 @@
     <a [routerLink]="['/']">
       <div class="Title">TryOnMe</div>
     </a>
-    <serch-bar>
-    </serch-bar>
+    <div class="search-box">
+      <input type="text" placeholder="검색어를 입력하세요..." [(ngModel)]="searchInput" class="searchInput"/>
+      <div class="search">
+        <button [routerLink]="['/search', searchInput]">확인</button>
+      </div>
+    </div>
   </div>
   <div class = "description" >
-
     <div class="app-data">
       <router-outlet></router-outlet>
     </div>
@@ -26,6 +29,12 @@
       </div>
 
     </a>
+    <a [routerLink]="['/community']" routerLinkActive="router-link-active">
+      <div class="NavBox">
+        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <div class="BottomNavText">커뮤니티</div>
+      </div>
+    </a>
     <a [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
@@ -38,10 +47,10 @@
         <div class="BottomNavText">마이</div>
       </div>
     </a>
-    <a [routerLink]="['/community']" routerLinkActive="router-link-active">
+    <a (click)="logout()" *ngIf="signService.isSignIn()">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
-        <div class="BottomNavText">커뮤니티</div>
+        <div class="BottomNavText">로그아웃</div>
       </div>
     </a>
   </div>

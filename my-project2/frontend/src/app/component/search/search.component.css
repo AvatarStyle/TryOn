@@ -24,15 +24,16 @@ select:focus{
   outline:none;
 }
 
-.search-box {
-  width: 100%;
-  margin-top: 30px;
+
+.center-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.center-container {
+.search-box {
+  width: 100%;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;

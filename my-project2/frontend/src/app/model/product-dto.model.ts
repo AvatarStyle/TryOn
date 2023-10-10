@@ -4,4 +4,6 @@ export class ProductDTO {
   imageUrl: string;
   price: number;
   rating: number;
+  brand: string;
+  buyUrl: string;
 }

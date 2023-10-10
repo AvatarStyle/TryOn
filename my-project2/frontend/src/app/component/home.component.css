@@ -17,7 +17,8 @@
 }
 
 .product, .post, .propose{
-
+  width:100%;
+  height: auto;
 }
 
 .itemList{
@@ -31,9 +32,12 @@
   position: relative;
   width: 100%;
   padding-bottom: 120%; /* 이 부분이 가로 세로 비율을 동일하게 유지합니다 */
-
 }
 
+.imgContainer2{
+  position: relative;
+  width: 100%;
+}
 
 
 .postImg, .productImg, .proposeImg{
@@ -48,6 +52,7 @@
 
 .brand, .propose, .post, .product{
   width: 18%;
+  margin: 0 0.2%;
 }
 
 

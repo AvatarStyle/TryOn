@@ -4,6 +4,9 @@ import {Router} from "@angular/router";
 import {Observable, of} from "rxjs";
 import {OverlayComponent} from "./overlay/overlay.component";
 import {HttpClient} from "@angular/common/http";
+import {ProductService} from "../service/product.service";
+import {error} from "@angular/compiler-cli/src/transformers/util";
+import {ProductDTO} from "../model/product-dto.model";
 
 
 @Component({
@@ -43,22 +46,22 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   currentIndices = [];
   posts = [];
-  products=[];
+  products: ProductDTO[];
   communities=[];
   brands1=[
-    {path:'1',name:'필루미네이트' },
-    {path:'2',name:'나이키' },
-    {path:'3',name:'브라운 브레스' },
-    {path:'4',name:'반스' },
-    {path:'5',name:'폴로' },
+    {path:'1',name:'필루미네이트',url:'https://filluminate.com/index.html' },
+    {path:'2',name:'나이키',url:'https://www.nike.com' },
+    {path:'3',name:'브라운 브레스',url:'https://brownbreath.com'},
+    {path:'4',name:'반스',url:'http://vans.co.kr' },
+    {path:'5',name:'폴로',url:'https://www.ralphlauren.co.kr'},
 
     ];
   brands2=[
-    {path:'6',name:'커버낫' },
-    {path:'7',name:'더블유브이' },
-    {path:'8',name:'Lee' },
-    {path:'9',name:'아커버' },
-    {path:'10',name:'어반드래스' },
+    {path:'6',name:'커버낫',url:'https://covernat.net'},
+    {path:'7',name:'더블유브이',url:'https://www.wvproject.co.kr'},
+    {path:'8',name:'Lee',url:'https://www.lee.com'},
+    {path:'9',name:'아커버',url:'https://acover.co.kr'},
+    {path:'10',name:'어반드래스',url:'https://avandress.com'},
   ];
 
 
@@ -69,7 +72,8 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private productService: ProductService
   ) {}
 
   ngOnInit(): void{
@@ -84,6 +88,13 @@ export class HomeComponent implements OnInit, OnDestroy{
         this.currentIndices[i] = 0;
       }
     });
+
+    this.productService.getAllProducts().subscribe(
+      data => {
+        this.products = data;
+      },
+      error => console.error(error)
+    );
   }
 
   ngOnDestroy(): void{
@@ -134,5 +145,13 @@ export class HomeComponent implements OnInit, OnDestroy{
     if (this.currentIndices[postIndex] < postImageLength - 1) {
       this.currentIndices[postIndex]++;
     }
+  }
+
+  goToBuyUrl(url: string) {
+    window.open(url, '_blank');
+  }
+
+  goToUrl(url: string){
+    window.open(url, '_blank');
   }
 }

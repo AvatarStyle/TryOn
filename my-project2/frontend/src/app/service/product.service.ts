@@ -24,4 +24,8 @@ export class ProductService {
   getProduct(id:string): Observable<ProductDTO> {
     return this.http.get<ProductDTO>(`${this.apiUrl}${id}`);
   }
+
+  getAllProducts(): Observable<ProductDTO[]>{
+    return this.http.get<ProductDTO[]>(`${this.apiUrl}all`);
+  }
 }

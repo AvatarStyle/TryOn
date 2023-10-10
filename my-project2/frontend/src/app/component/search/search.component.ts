@@ -4,17 +4,19 @@ import { ItemService } from "../../item.service";
 import { HttpClient } from "@angular/common/http";
 import {ClosetService} from "../../service/closet.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
+export class SearchComponent{
   isSearchVisible: boolean = true;
   localResults: Item[] = [];
   apiResults: any[] = [];
   searchInput: string;
+  currentSearchInput: string;
 
   categories = ['', '아우터', '반팔', '니트'];
   selectedCategory: string;
@@ -22,8 +24,16 @@ export class SearchComponent {
   constructor(
     private itemService: ItemService,
     private http: HttpClient,
-    private closetService: ClosetService
+    private closetService: ClosetService,
+    private route: ActivatedRoute
   ) {}
+
+  ngOnInit(){
+    this.route.params.subscribe(params => {
+      const query = params['query'];
+      this.performSearch(query);
+    })
+  }
 
   performSearch(query: string) {
     this.localResults = [];
@@ -55,6 +65,8 @@ export class SearchComponent {
 
       Array.prototype.push.apply(this.apiResults, transformedNaverItems);
     });
+
+    this.currentSearchInput = query;
   }
 
   addToCloset(item){

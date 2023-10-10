@@ -1,6 +1,6 @@
 <div class="container">
   <div class="search-container" *ngIf="isSearchVisible">
-    <div class="search-box">
+    <!--<div class="search-box">
       <input type="text" placeholder="검색어를 입력하세요..." [(ngModel)]="searchInput" class="searchInput"/>
       <div class="search">
         <button (click)="performSearch(searchInput)">확인</button>
@@ -11,8 +11,8 @@
       <select [(ngModel)]="selectedCategory" class="select-box">
         <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
       </select>
-    </div>
-    <div class="title">상품 검색 결과</div>
+    </div>-->
+    <div class="title">{{ currentSearchInput ? currentSearchInput + ' ' : '' }} 상품 검색 결과</div>
 
     <div class="search-results">
       <div *ngFor="let item of localResults" class="item-container">

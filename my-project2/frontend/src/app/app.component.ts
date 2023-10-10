@@ -27,10 +27,11 @@ export class AppComponent {
 
 
   loginForm: FormGroup; //form 인스턴스로 로그인 폼 정보 관리
-  
+
   TopNav;
   BottomNav;
   ThisComponent;
+  searchInput: string;
 
 
   constructor(
@@ -51,7 +52,7 @@ export class AppComponent {
       this.setNav();
     });
 
-
+    this.searchInput = '';
   }
 
 
@@ -77,7 +78,7 @@ export class AppComponent {
   }
 
 
-  
+
 
   onLogin(){
     const loginData = this.loginForm.value;
@@ -90,6 +91,10 @@ export class AppComponent {
         console.error(error);
       }
     );
+  }
+
+  logout(){
+    localStorage.removeItem('username');
   }
 
   /*ngOnInit(){

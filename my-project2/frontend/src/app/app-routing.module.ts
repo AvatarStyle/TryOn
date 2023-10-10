@@ -38,7 +38,8 @@ const routes: Routes = [
   {path: 'manage', component:ManageComponent},
   {path: 'closet', component:ClosetComponent},
   {path: 'community', component:CommunityComponent},
-  {path: 'post', component:PostComponent}
+  {path: 'post', component:PostComponent},
+  {path: 'search/:query', component:SearchComponent}
 ];
 
 @NgModule({

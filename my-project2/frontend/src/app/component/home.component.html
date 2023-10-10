@@ -3,38 +3,23 @@
     <img class="banner" [src]="currentImage">
   </a>
 </div>
-
-
 <div class="category">
-  <div class="categoryName">인기 상품</div>
+  <div class="categoryName">추천 상품</div>
   <div class="itemList">
-    <div class="product" *ngFor="let post of [1,2,3,4]">
-      <div class="imgContainer">
-        <img class=productImg src="/assets/4.jpg">
+    <ng-container *ngFor="let product of products; let i=index">
+      <div class="product" *ngIf="i<5">
+        <div class="imgContainer2">
+          <img class="brandImg" (click)="goToBuyUrl(product.buyUrl)" [src]="product.imageUrl">
+        </div>
+        <h5 class="productBrand">{{ product.brand }}</h5>
+        <h7 class="productName">{{ product.name }}</h7>
       </div>
-      <div class="productName">
-        예시 상품
-      </div>
-      <div class="producttext">
-        멘트 있으면 추가
-      </div>
-    </div>
-
-    <div class="product" >
-      <div class="imgContainer">
-      <img class=productImg src="">
-      </div>
-
-      <div class="productName">
-      예시 입력
-      </div>
-    </div>
+    </ng-container>
   </div>
 </div>
 <hr>
 <div class="category">
   <div class="categoryName">인기 글</div>
-
   <div class="itemList">
     <ng-container *ngFor="let post of posts; let postIndex = index">
       <div class="post">
@@ -46,35 +31,17 @@
       </div>
     </ng-container>
   </div>
-  <!--<div class="itemList">
-    <div class="post" *ngFor="let post of [1,2,3,4,5]" >
-      <div class="imgContainer">
-        <img class=postImg [src]="'/assets/brand/'+post+'.png'">
-      </div>
-      <div class="postName">
-        예시 포스트
-      </div>
-      <div class="postText">
-        하트나 해시태그 같은 정보들 있으면 추가
-      </div>
-    </div>
-  </div>-->
 </div>
-
 <hr>
-
 <div class="category">
   <div class="categoryName">인기 브랜드</div>
   <div class="itemList">
     <div class="brand" *ngFor="let brand of brands1" >
       <div class="brandContainer">
         <div class="brandDiv">
-          <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+          <img class=brandImg (click)="goToBuyUrl(brand.url)" [src]="'/assets/brand/'+brand.path+'.png'">
         </div>
       </div>
-
-
-
       <div class="brandName">
         {{brand.name}}
       </div>
@@ -86,21 +53,14 @@
         <div class="brandDiv">
           <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
         </div>
-     </div>
-
-
+      </div>
       <div class="brandName">
         {{brand.name}}
       </div>
-
     </div>
   </div>
 </div>
-
-
-
 <hr>
-
 <div class="category">
   <div class="categoryName">추천 의류</div>
   <div class="itemList">
@@ -117,4 +77,23 @@
     </div>
   </div>
 </div>
-
+<!--
+<div class="product" *ngFor="let post of [1,2,3,4]">
+  <div class="imgContainer">
+    <img class=productImg src="/assets/4.jpg">
+  </div>
+  <div class="productName">
+    예시 상품
+  </div>
+  <div class="producttext">
+    멘트 있으면 추가
+  </div>
+</div>
+    <div class="product">
+  <div class="imgContainer">
+  <img class=productImg src="">
+  </div>
+  <div class="productName">
+  예시 입력
+  </div>
+</div>-->
