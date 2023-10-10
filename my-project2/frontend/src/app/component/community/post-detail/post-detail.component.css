@@ -1,0 +1,55 @@
+.post-container {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.person{
+  height: 100%;
+}
+
+.comments{
+  text-align: left;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.com_user{
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.com_comments{
+  text-align: left;
+}
+
+.username{
+  /*text-align: left;
+  align-items: center;*/
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 7px;
+}
+.image-container img {
+  width: 100%;
+}
+
+.info-container {
+  text-align: left;
+}
+
+.title1 {
+  margin-top: 5px;
+  font-size: 23px;
+}
+.username {
+  font-size:18px;
+}

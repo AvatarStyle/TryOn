@@ -19,6 +19,7 @@ import {ManageComponent} from "./component/product/manage/manage.component";
 import {ClosetComponent} from "./component/member/closet/closet.component";
 import {CommunityComponent} from "./component/community/community.component";
 import {PostComponent} from "./component/community/post/post.component";
+import {PostDetailComponent} from "./component/community/post-detail/post-detail.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'closet', component:ClosetComponent},
   {path: 'community', component:CommunityComponent},
   {path: 'post', component:PostComponent},
-  {path: 'search/:query', component:SearchComponent}
+  {path: 'search/:query', component:SearchComponent},
+  {path: 'post/:query', component:PostDetailComponent}
 ];
 
 @NgModule({

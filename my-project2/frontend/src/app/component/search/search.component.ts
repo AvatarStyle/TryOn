@@ -74,12 +74,82 @@ export class SearchComponent{
     if(username){
       this.closetService.addToCloset(username, item.id)
         .subscribe(
-          response=> console.log(response),
-          error => console.error(error)
+          response=> {
+            console.log(response);
+          },
+          error => {
+            console.error(error);
+          }
         );
     }
   }
 
+  addToClosetAPI(item) {
+    const convertedItem = this.convertToClosetItem(item);
+
+    const itemId = this.generateItemId();
+
+    convertedItem.id = itemId;
+
+    const url = 'https://tryon-399311.du.r.appspot.com/closet/add';
+
+    // Products 테이블에 저장할 상품 정보
+    const productPayload = {
+      brand: convertedItem.brand,
+      buyUrl: convertedItem.buyUrl,
+      category: convertedItem.category,
+      id: convertedItem.id,
+      imageUrl: convertedItem.imageUrl,
+      name: convertedItem.name,
+      price: convertedItem.price,
+      tags: convertedItem.tags
+    };
+
+    // Products 테이블에 POST 요청 보내기
+    this.http.post('https://tryon-399311.du.r.appspot.com/api/products/', productPayload)
+      .subscribe(
+        response => {
+          alert('상품이 옷장에 추가 되었습니다.');
+          console.log('상품 정보 저장 성공');
+        },
+        error => {
+          console.error('상품 정보 저장 실패');
+        }
+      );
+
+    // 옷장에 상품 ID 추가하기
+    const requestPayload = {
+      username: localStorage.getItem('username'),
+      productId: itemId
+    };
+
+    return this.http.post(url, requestPayload)
+      .subscribe(
+        response => {
+          console.log('옷장 추가 성공');
+        },
+        error => {
+          console.error('옷장 추가 실패');
+        }
+      );
+  }
+
+
+  convertToClosetItem(item): any {
+    return {
+      name: item.title,
+      category: item.category3,
+      brand: item.brand,
+      price: parseInt(item.lprice),
+      imageUrl: item.image,
+      buyUrl: item.link,
+      tags: [],
+    };
+  }
+
+  generateItemId(){
+    return Date.now().toString();
+  }
 
   toggleSearch(): void {
     this.localResults = []; // 로컬 결과 초기화

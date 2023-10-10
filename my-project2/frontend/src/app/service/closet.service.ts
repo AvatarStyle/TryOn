@@ -11,6 +11,7 @@ export class ClosetService {
 
   constructor(private http: HttpClient) { }
 
+
   addToCloset(username: string, productId: string) {
     const url = 'https://tryon-399311.du.r.appspot.com/closet/add'; // API endpoint
     return this.http.post(url, { username, productId });
@@ -24,5 +25,11 @@ export class ClosetService {
   removeFromCloset(id: string): Observable<any> {
     const url = `https://tryon-399311.du.r.appspot.com/closet/remove/${id}`; // API endpoint
     return this.http.delete(url, { responseType: 'text' }); // Expect a text response
+  }
+
+  addToClosetAPI(item){
+    const url = 'https://tryon-399311.du.r.appspot.com/closet/apiAdd';
+
+    return this.http.post(url, item);
   }
 }

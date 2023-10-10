@@ -154,4 +154,8 @@ export class HomeComponent implements OnInit, OnDestroy{
   goToUrl(url: string){
     window.open(url, '_blank');
   }
+
+  goToPost(postId){
+    this.router.navigate(['/post', postId])
+  }
 }

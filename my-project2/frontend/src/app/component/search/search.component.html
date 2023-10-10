@@ -37,7 +37,6 @@
       </div>
     </div>
     <div class="title">상품 추천</div>
-
     <div class="api-result" style="margin-top: 20px;">
       <div *ngFor="let item of apiResults" class="item-container">
         <img [src]="item.image" alt="{{item.name}}의 이미지" style="width: 300px; height: 300px;" class="item-image">
@@ -53,7 +52,7 @@
         </div>
         <div class="move">
           <a mat-button [href]="item.link" target="_blank" rel="noopener noreferrer">구매처 이동</a>
-          <a mat-button [href]="item.link" target="_blank" rel="noopener noreferrer">옷장에 추가</a>
+          <a mat-button (click)="addToClosetAPI(item)" target="_blank" rel="noopener noreferrer">옷장에 추가</a>
         </div>
       </div>
       <div *ngIf="apiResults.length === 0">

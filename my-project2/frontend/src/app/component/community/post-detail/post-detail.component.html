@@ -1,0 +1,35 @@
+<div class="post-container">
+  <br><br>
+  <div class="user">
+    <img class="person" src="assets/icons/person.png">
+    <p class="username">{{post.username}}</p>
+  </div>
+  <div class="image-container">
+    <img [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[0]" alt="Post Image">
+  </div>
+  <div class="info-container">
+    <p class="title1">{{post.title}}</p>
+    <p class="style">스타일 | {{post.style}}</p>
+  </div>
+  <div class="action" style="display: flex; justify-content: center; text-align: center;">
+    <img [src]="likeButtonImage()" (click)="toggleLike()" style="width: 50px; height: 50px;">
+    <p style="font-weight: bold; font-size: 30px; margin-left: 10px;">{{ post.likes.length }}</p>
+  </div>
+  <div class="comment-section">
+    <form (ngSubmit)="submitComment()">
+      <textarea [(ngModel)]="commentText" name="commentInput" placeholder="댓글 작성"></textarea>
+      <button type="submit">전송</button>
+    </form>
+    <p class="comments">댓글 {{ commentList.length }}개</p>
+    <br>
+    <div *ngFor="let comment of commentList">
+      <div style="display: flex">
+        <img src="assets/icons/person.png" style="width: 25px; height: 25px; margin-right: 5px;">
+        <p class="com_user">{{ comment.username }}</p>
+      </div>
+      <p class="com_comments">{{ comment.content }}</p>
+      <br><br>
+    </div>
+  </div>
+</div>
+
