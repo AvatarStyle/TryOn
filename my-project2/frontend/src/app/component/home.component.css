@@ -21,7 +21,19 @@
   height: auto;
 }
 
+.product{
+  display: flex;
+  flex-direction: column;
+}
+
 .itemList{
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.itemList1{
   flex:1;
   display: flex;
   justify-content: space-between;
@@ -37,6 +49,9 @@
 .imgContainer2{
   position: relative;
   width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 
@@ -55,6 +70,23 @@
   margin: 0 0.2%;
 }
 
+.productBrand, .productName, .postName, .postText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.postName{
+  margin-top: 5px;
+}
+
+.postText{
+  font-size: 13px;
+}
+
+.postLikes{
+  font-size: 10px;
+}
 
 .brandImg{
 

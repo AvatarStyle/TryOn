@@ -7,7 +7,6 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  
 }
 
 .description{
@@ -15,11 +14,8 @@
   min-height: 100vh;
   overflow-y: auto;
   width: 100%;
-<<<<<<< Updated upstream
   margin-left: 15px;
   margin-right: 15px;
-=======
->>>>>>> Stashed changes
 }
 
 
@@ -87,14 +83,14 @@ a{
 }
 .BottomNavIcon{
   width: 100%;
-  height: calc(100% - 36px);
+  height: calc(100% - 25px);
   object-fit: contain;
 }
 
 .BottomNavText{
   color: black;
   text-align: center;
-  font-size:24px;
+  font-size:20px;
 }
 
 

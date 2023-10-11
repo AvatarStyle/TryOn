@@ -47,4 +47,8 @@ export class CommunityComponent implements OnInit{
       this.currentIndices[postIndex]++;
     }
   }
+
+  goToPost(postId){
+    this.router.navigate(['/post', postId])
+  }
 }

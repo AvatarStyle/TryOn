@@ -83,6 +83,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.http.get(`https://tryon-399311.du.r.appspot.com/posts/all`)
     .subscribe((data: any[]) => {
       console.log(data);
+      data.sort((a, b) => b.likes.length - a.likes.length);
       this.posts = data;
       for (let i = 0; i < data.length; i++) {
         this.currentIndices[i] = 0;

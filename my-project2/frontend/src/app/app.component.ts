@@ -26,6 +26,7 @@ export class AppComponent {
 
 
 
+  username1 = localStorage.getItem('username');
   loginForm: FormGroup; //form 인스턴스로 로그인 폼 정보 관리
 
   TopNav;

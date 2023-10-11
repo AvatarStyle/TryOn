@@ -11,14 +11,15 @@
     <p class="title1">{{post.title}}</p>
     <p class="style">스타일 | {{post.style}}</p>
   </div>
+  <hr>
   <div class="action" style="display: flex; justify-content: center; text-align: center;">
-    <img [src]="likeButtonImage()" (click)="toggleLike()" style="width: 50px; height: 50px;">
-    <p style="font-weight: bold; font-size: 30px; margin-left: 10px;">{{ post.likes.length }}</p>
+    <img [src]="likeButtonImage()" (click)="toggleLike()" style="width: 40px; height: 40px; margin-top: 3px;">
+    <p style="font-weight: bold; font-size: 30px; margin-left: 10px; margin-bottom: 20px;">{{ post.likes.length }}</p>
   </div>
   <div class="comment-section">
-    <form (ngSubmit)="submitComment()">
-      <textarea [(ngModel)]="commentText" name="commentInput" placeholder="댓글 작성"></textarea>
-      <button type="submit">전송</button>
+    <form (ngSubmit)="submitComment()" style="display: flex;">
+      <textarea [(ngModel)]="commentText" name="commentInput" placeholder="댓글 작성" style="width: 550px;"></textarea>
+      <button type="submit"style="width: 50px">작성</button>
     </form>
     <p class="comments">댓글 {{ commentList.length }}개</p>
     <br>

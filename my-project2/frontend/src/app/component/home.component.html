@@ -3,6 +3,7 @@
     <img class="banner" [src]="currentImage">
   </a>
 </div>
+<hr>
 <div class="category">
   <div class="categoryName">추천 상품</div>
   <div class="itemList">
@@ -12,7 +13,7 @@
           <img class="brandImg" (click)="goToBuyUrl(product.buyUrl)" [src]="product.imageUrl">
         </div>
         <h5 class="productBrand">{{ product.brand }}</h5>
-        <h7 class="productName">{{ product.name }}</h7>
+        <h6 class="productName">{{ product.name }}</h6>
       </div>
     </ng-container>
   </div>
@@ -24,10 +25,11 @@
     <ng-container *ngFor="let post of posts; let postIndex = index">
       <div class="post">
         <div class="imgContainer">
-          <img (click)="goToPost(post.id)"[src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]" class="postImg"/>
+          <img (click)="goToPost(post.id)" [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]" class="postImg"/>
         </div>
         <h5 class="postName">{{ post.username }}</h5>
-        <h7 class="postText">{{ post.title }}</h7>
+        <p class="postText">{{ post.title }}</p>
+        <p class="postLikes">좋아요 {{ post.likes.length }}</p>
       </div>
     </ng-container>
   </div>
@@ -60,8 +62,9 @@
     </div>
   </div>
 </div>
+<!--
 <hr>
-<div class="category">
+div class="category">
   <div class="categoryName">추천 의류</div>
   <div class="itemList">
     <div class="propose" *ngFor="let post of [1,2,3,4,5]" >
@@ -76,7 +79,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <!--
 <div class="product" *ngFor="let post of [1,2,3,4]">
   <div class="imgContainer">

@@ -44,7 +44,7 @@
     <a [routerLink]="['/closet']" routerLinkActive="router-link-active" *ngIf="signService.isSignIn()">
       <div class="NavBox">
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
-        <div class="BottomNavText">마이</div>
+        <div class="BottomNavText">{{ username1 }}의 옷장</div>
       </div>
     </a>
     <a (click)="logout()" *ngIf="signService.isSignIn()">
