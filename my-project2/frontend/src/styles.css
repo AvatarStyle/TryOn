@@ -55,13 +55,13 @@ a{
 }
 
 .preview{
-  height: 600px;
-  width:450px;
+  top:0;
+  left: 0;
   padding: 10px;
   border-radius: 11%;
 
   width: 100%; 
-  height: auto; 
+  object-fit: contain;
   min-width: 270px; 
   min-height: 270px;
 
