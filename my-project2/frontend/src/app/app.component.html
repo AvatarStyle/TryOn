@@ -11,9 +11,7 @@
     </div>
   </div>
   <div class = "description" >
-    <div class="app-data">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet style="width:100%;"></router-outlet>
   </div>
   <div id="BottomNav" *ngIf="BottomNav">
     <a [routerLink]="['/']" routerLinkActive="router-link-active">

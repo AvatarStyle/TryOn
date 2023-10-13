@@ -9,8 +9,8 @@
   <div class="itemList">
     <ng-container *ngFor="let product of products; let i=index">
       <div class="product" *ngIf="i<5">
-        <div class="imgContainer2">
-          <img class="brandImg" (click)="goToBuyUrl(product.buyUrl)" [src]="product.imageUrl">
+        <div class="imgContainer">
+          <img class="productImg" (click)="goToBuyUrl(product.buyUrl)" [src]="product.imageUrl">
         </div>
         <h5 class="productBrand">{{ product.brand }}</h5>
         <h6 class="productName">{{ product.name }}</h6>
