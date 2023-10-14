@@ -5,8 +5,12 @@
     </a>
     <div class="search-box">
       <input type="text" placeholder="검색어를 입력하세요..." [(ngModel)]="searchInput" class="searchInput"/>
+      
       <div class="search">
-        <button [routerLink]="['/search', searchInput]">확인</button>
+        <button [routerLink]="['/search', searchInput]">
+          <a href="https://www.flaticon.com/kr/free-icons/" title="검색 아이콘">검색 아이콘  제작자: Smashicons - Flaticon</a>
+          <img src="/assets/icons/search.png">
+        </button>
       </div>
     </div>
   </div>
@@ -16,7 +20,8 @@
   <div id="BottomNav" *ngIf="BottomNav">
     <a [routerLink]="['/']" routerLinkActive="router-link-active">
       <div class="NavBox">
-        <img class=BottomNavIcon src='/assets/clothesSample.png'>
+        <a href="https://www.flaticon.com/kr/free-icons/-" title="홈 버튼 아이콘">홈 버튼 아이콘  제작자: Pixel perfect - Flaticon</a>
+        <img class=BottomNavIcon src='/assets/icons/home.png'>
         <div class="BottomNavText">홈</div>
       </div>
     </a>
@@ -35,6 +40,7 @@
     </a>
     <a [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
       <div class="NavBox">
+
         <img class=BottomNavIcon src='/assets/clothesSample.png'>
         <div class="BottomNavText">로그인</div>
       </div>
