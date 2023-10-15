@@ -4,6 +4,7 @@ import {forkJoin} from "rxjs";
 import {ProductService} from "../../../service/product.service";
 import {ClosetResponse} from "src/app/component/member/closet/closet-response.model";
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-closet',
@@ -18,7 +19,8 @@ export class ClosetComponent implements OnInit{
 
   constructor(private closetService: ClosetService,
               private productService: ProductService,
-              private http: HttpClient) {}
+              private http: HttpClient,
+              private router: Router) {}
 
   ngOnInit() {
     this.loadClosetItems();
@@ -123,4 +125,7 @@ export class ClosetComponent implements OnInit{
       });
   }
 
+  goToPost(postId){
+    this.router.navigate(['/post', postId])
+  }
 }
