@@ -54,7 +54,7 @@
 <div class="boxes-wrapper">
   <ng-container *ngFor="let item of closetItems">
     <div class="box">
-        <img crossorigin="anonymous" [src]="item.imageUrl" alt="{{item.name}}의 이미지" class="item-image">
+        <img [src]="item.imageUrl" alt="{{item.name}}의 이미지" class="item-image">
         <br>
         <div class="detail">
           <div style="font-weight: bold" class="name">{{ item.name }}</div>
