@@ -145,7 +145,7 @@ footer{
 
 .search {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 .searchInput {
@@ -156,8 +156,9 @@ footer{
 }
 
 .search-icon{
-  width:100%;
+  width: auto;
   height: 100%;
+  text-align: right;
 }
 
 .search button {
@@ -165,4 +166,3 @@ footer{
   background-color: transparent;
   height: 100%;
 }
-
