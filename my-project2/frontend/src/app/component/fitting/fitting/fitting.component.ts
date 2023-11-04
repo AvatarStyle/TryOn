@@ -82,7 +82,7 @@ export class FittingComponent implements OnInit{
       const formData: FormData = new FormData();
       formData.append('modelImage', this.modelImg);
       formData.append('clothesImage', this.clothesImg);
-      this.http.post('/fitting/upload', formData,{responseType: 'blob'}).subscribe((response: Blob) => {
+      this.http.post('/fitting/upload/', formData,{responseType: 'blob'}).subscribe((response: Blob) => {
 
         // Blob 데이터를 파일로 다운로드
         const blobUrl = window.URL.createObjectURL(response);

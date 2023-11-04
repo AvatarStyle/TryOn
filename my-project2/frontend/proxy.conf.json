@@ -13,7 +13,7 @@
     "secure": false,
     "logLevel": "debug",
     "pathRewrite": {
-      "^/fitting/upload": "/submit"
+      "^/fitting/upload/": "/submit"
     }
   },
   "/naver-api/*" : {
