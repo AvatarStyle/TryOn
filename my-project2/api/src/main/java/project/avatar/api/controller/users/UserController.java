@@ -2,7 +2,6 @@ package project.avatar.api.controller.users;
 
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import io.swagger.annotations.Api;
-import io.swagger.models.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
