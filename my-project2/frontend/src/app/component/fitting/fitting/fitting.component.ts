@@ -94,12 +94,19 @@ export class FittingComponent implements OnInit{
   }
 
   openImageDialog(): void{
-    let imagePath = this.modelImg.name +"_"+ this.clothesImg.name
     const dialogRef = this.dialog.open(ResultComponent,{
       width: '80%',
       data: { generatedIMG : this.responseImage }
     });
   }
+  
+  /*openImageDialog(): void{
+    let imagePath = this.modelImg.name +"_"+ this.clothesImg.name
+    const dialogRef = this.dialog.open(ResultComponent,{
+      width: '80%',
+      data: { generatedIMG : this.responseImage }
+    });
+  }*/
 
   applyCloth(imageSrc: string): void {
     const clothesPreview = document.getElementById('clothesPreview') as HTMLImageElement;
