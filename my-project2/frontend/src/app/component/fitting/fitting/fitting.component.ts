@@ -98,10 +98,12 @@ export class FittingComponent implements OnInit{
   }
 
   openImageDialog(): void{
-    const dialogRef = this.dialog.open(ResultComponent,{
-      width: '80%',
-      data: { generatedIMG : this.responseImage }
-    });
+    if(this.responseImage !== null){
+      const dialogRef = this.dialog.open(ResultComponent,{
+        width: '80%',
+        data: { generatedIMG : this.responseImage }
+      });
+    }
   }
 
   /*openImageDialog(): void{
