@@ -85,7 +85,9 @@ export class FittingComponent implements OnInit{
 
       this.responseImage = null;
 
-      this.openImageDialog();
+      if (this.openImageDialog() == null){
+        this.openImageDialog();
+      }
 
       this.http.post('/fitting/upload/', formData,{responseType: 'blob'}).subscribe((response: Blob) => {
         // Blob 데이터를 파일로 다운로드
@@ -98,12 +100,10 @@ export class FittingComponent implements OnInit{
   }
 
   openImageDialog(): void{
-    if(this.responseImage !== null){
-      const dialogRef = this.dialog.open(ResultComponent,{
-        width: '80%',
-        data: { generatedIMG : this.responseImage }
-      });
-    }
+    const dialogRef = this.dialog.open(ResultComponent,{
+      width: '80%',
+      data: { generatedIMG : this.responseImage }
+    });
   }
 
   /*openImageDialog(): void{
