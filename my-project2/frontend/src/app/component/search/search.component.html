@@ -32,9 +32,9 @@
           <a mat-button (click)="addToCloset(item)">옷장에 추가</a>
         </div>
       </div>
-      <div *ngIf="localResults.length === 0">
+      <a *ngIf="localResults.length === 0" routerLink="/manage">
         검색 결과가 없습니다.
-      </div>
+      </a>
     </div>
     <div class="title">상품 추천</div>
     <div class="api-result" style="margin-top: 20px;">
