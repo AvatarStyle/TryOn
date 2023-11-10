@@ -103,8 +103,13 @@ export class ClosetComponent implements OnInit{
   selectedPost = null;
 
   openUpdateForm(post) {
-    this.updateFormOpened = true;
-    this.selectedPost = { ...post };
+    if (this.updateFormOpened && this.selectedPost && this.selectedPost.id === post.id) {
+      this.updateFormOpened = false;
+      this.selectedPost = null;
+    } else {
+      this.updateFormOpened = true;
+      this.selectedPost = { ...post };
+    }
   }
 
   updatePost(id: string) {

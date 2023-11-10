@@ -13,29 +13,38 @@
       </select>
     </div>-->
     <div class="title">{{ currentSearchInput ? currentSearchInput + ' ' : '' }} 상품 검색 결과</div>
-
     <div class="search-results">
-      <div *ngFor="let item of localResults" class="item-container">
-        <img [src]="item.imageUrl" alt="{{item.name}}의 이미지" style="width: 300px; height: 300px;" class="item-image">
-        <br>
-        <div style="font-weight: bold" class="item-name">
-          {{ item.name }}
-        </div>
-        <div class="item-brand">
-          {{ item.brand }}
-        </div>
-        <div class="item-price">
-          {{ item.price | number }}원
-        </div>
-        <div class="move">
-          <a mat-button [href]="item.buyUrl" target="_blank" rel="noopener noreferrer">구매처 이동</a>
-          <a mat-button (click)="addToCloset(item)">옷장에 추가</a>
+      <div class="item-wrapper">
+        <div *ngFor="let item of localResults | slice: (currentPage - 1) * itemsPerPage : currentPage * itemsPerPage" class="item-container">
+          <img [src]="item.imageUrl" alt="{{item.name}}의 이미지" style="width: 300px; height: 300px;" class="item-image">
+          <br>
+          <div style="font-weight: bold" class="item-name">
+            {{ item.name }}
+          </div>
+          <div class="item-brand">
+            {{ item.brand }}
+          </div>
+          <div class="item-price">
+            {{ item.price | number }}원
+          </div>
+          <div class="move">
+            <a mat-button [href]="item.buyUrl" target="_blank" rel="noopener noreferrer">구매처 이동</a>
+            <a mat-button (click)="addToCloset(item)">옷장에 추가</a>
+          </div>
         </div>
       </div>
       <a *ngIf="localResults.length === 0" routerLink="/manage">
         검색 결과가 없습니다.
       </a>
+      <div class="pagination" *ngIf="numberOfPages > 1">
+        <button *ngFor="let page of [].constructor(numberOfPages); let i = index"
+                (click)="currentPage = i + 1"
+                [ngClass]="{'active': currentPage === i + 1}">
+          {{i + 1}}
+        </button>
+      </div>
     </div>
+
     <div class="title">상품 추천</div>
     <div class="api-result" style="margin-top: 20px;">
       <div *ngFor="let item of apiResults" class="item-container">

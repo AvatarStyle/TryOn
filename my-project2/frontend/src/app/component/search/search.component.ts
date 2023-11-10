@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, SimpleChange, SimpleChanges} from '@angular/core';
 import { Item } from "../items/item.model";
 import { ItemService } from "../../item.service";
 import { HttpClient } from "@angular/common/http";
@@ -17,6 +17,9 @@ export class SearchComponent{
   apiResults: any[] = [];
   searchInput: string;
   currentSearchInput: string;
+  currentPage = 1;
+  itemsPerPage = 9;
+  numberOfPages: number;
 
   categories = ['', '아우터', '반팔', '니트'];
   selectedCategory: string;
@@ -35,6 +38,12 @@ export class SearchComponent{
     })
   }
 
+  ngOnChanges(changes: SimpleChanges){
+    if (changes.localResults){
+      this.numberOfPages = Math.ceil(this.localResults.length / this.itemsPerPage);
+    }
+  }
+
   performSearch(query: string) {
     this.localResults = [];
     this.apiResults = [];
@@ -43,6 +52,7 @@ export class SearchComponent{
     this.itemService.searchByTag(query).subscribe((result: any) => {
       console.log(result);
       this.localResults = Array.isArray(result.data) ? result.data : [result.data];
+      this.numberOfPages = Math.ceil(this.localResults.length / this.itemsPerPage);
     });
 
 
@@ -75,7 +85,8 @@ export class SearchComponent{
       this.closetService.addToCloset(username, item.id)
         .subscribe(
           response=> {
-            console.log(response);
+            alert('상품이 옷장에 추가 되었습니다.');
+            console.log('상품 정보 저장 성공');
           },
           error => {
             console.error(error);
