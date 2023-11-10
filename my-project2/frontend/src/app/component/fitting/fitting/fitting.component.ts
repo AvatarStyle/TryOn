@@ -103,6 +103,8 @@ export class FittingComponent implements OnInit{
           this.dialogRef.close();
         }
         this.openImageDialog();
+      }, error => {
+        console.error(error);
       });
     }
   }
