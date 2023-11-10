@@ -1,6 +1,9 @@
 .container{
-  margin-left: 5px;
-  margin-top: 5px;
+
+  display:flex;
+
+  align-items:center; 
+  text-align: center;
 }
 
 h1{
@@ -15,9 +18,8 @@ h1{
   color: black; /* 글자색 검정색 */
 }
 
-
 .addContents{
-  float: left;
+  width: 100%;
 }
 
 .boxes-wrapper{
@@ -27,11 +29,27 @@ h1{
 }
 
 .box{
-  width: calc(50% - (1px * 2));
-  margin-left: 2px;
+  width: calc(50% - (2px * 2));
+  margin-left: 4px;
 
-  position: relative;
 }
+
+.ImgFrame{
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 120%; /* 너비의 100% 만큼 높이 설정 */
+}
+
+.communityImg{
+  left: 0;
+  top:0;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
 
 .title{
   white-space: nowrap;

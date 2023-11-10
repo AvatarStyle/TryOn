@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
-import { ResultComponent } from "../../result/result.component";
-import {MatDialog} from "@angular/material/dialog";
+import { MatDialog } from '@angular/material/dialog';
 import {ClosetService} from "../../../service/closet.service";
 import {ProductService} from "../../../service/product.service";
 import {forkJoin} from "rxjs";
 import { saveAs } from 'file-saver';
+import { NgModule } from '@angular/core';
+import { ResultService } from '../../result/result.service';
+import { ResultComponent } from '../../result/result.component';
+
 
 @Component({
   selector: 'app-fitting',
@@ -32,7 +35,9 @@ export class FittingComponent implements OnInit{
   constructor(private http: HttpClient,
               private dialog: MatDialog,
               private closetService: ClosetService,
-              private productService: ProductService) { }
+              private productService: ProductService,
+              private resultService : ResultService,
+              ) { }
 
   ngOnInit() {
     const username = localStorage.getItem('username');
@@ -82,31 +87,31 @@ export class FittingComponent implements OnInit{
       const formData: FormData = new FormData();
       formData.append('modelImage', this.modelImg);
       formData.append('clothesImage', this.clothesImg);
-      
+      const dialogRef = this.dialog.open(ResultComponent, {
+        width: '80%'
+      });
+  
       this.http.post('/fitting/upload/', formData,{responseType: 'blob'}).subscribe((response: Blob) => {
         // Blob 데이터를 파일로 다운로드
         const blobUrl = window.URL.createObjectURL(response);
         this.responseImage = blobUrl;
         // Blob 데이터를 "image/png" MIME 타입으로 처리
-        this.openImageDialog();
+        
+        this.resultService.setData({ generatedIMG : this.responseImage })
       });
     }
   }
 
-  openImageDialog(): void{
-    const dialogRef = this.dialog.open(ResultComponent,{
-      width: '80%',
-      data: { generatedIMG : this.responseImage }
-    });
-  }
 
-  /*openImageDialog(): void{
+
+
+  openImageDialog(): void{
     let imagePath = this.modelImg.name +"_"+ this.clothesImg.name
     const dialogRef = this.dialog.open(ResultComponent,{
       width: '80%',
       data: { generatedIMG : this.responseImage }
     });
-  }*/
+  }
 
   applyCloth(imageSrc: string): void {
     const clothesPreview = document.getElementById('clothesPreview') as HTMLImageElement;

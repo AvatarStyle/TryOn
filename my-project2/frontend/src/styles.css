@@ -18,6 +18,10 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select, div {
 }
 
 
+img{
+  border-radius: 11%;
+}
+
 .app{
   text-align: center;
 }
@@ -57,7 +61,7 @@ a{
 .title {
   height: auto;
   font-size: 36px;
-  margin: 36px;
+  margin: 12px 24px;;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
   line-height: 1;
@@ -68,7 +72,7 @@ a{
   position: relative;
   border: none;
   display: inline-block;
-  padding: 15px 30px;
+  padding: 15px 15px;
   border-radius: 15px;
   font-family: "paybooc-Light", sans-serif;
   text-decoration: none;
@@ -88,8 +92,6 @@ a{
 
   width: 100%; 
   object-fit: contain;
-  min-width: 270px; 
-  min-height: 270px;
 
 }
 
