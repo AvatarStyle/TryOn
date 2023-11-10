@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
 import { ResultComponent } from "../../result/result.component";
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ClosetService} from "../../../service/closet.service";
 import {ProductService} from "../../../service/product.service";
 import {forkJoin} from "rxjs";
@@ -29,6 +29,7 @@ export class FittingComponent implements OnInit{
   closetItems = [];
 
   username = localStorage.getItem('username');
+  dialogRef: MatDialogRef<ResultComponent>;
   constructor(private http: HttpClient,
               private dialog: MatDialog,
               private closetService: ClosetService,
@@ -77,27 +78,35 @@ export class FittingComponent implements OnInit{
     }
   }
 
-  sendImageInput(){
-    if(this.modelImg&&this.clothesImg){
+  sendImageInput() {
+    if (this.modelImg && this.clothesImg) {
       const formData: FormData = new FormData();
       formData.append('modelImage', this.modelImg);
       formData.append('clothesImage', this.clothesImg);
 
       this.responseImage = null;
 
-      if (this.openImageDialog() == null){
+      if (!this.dialogRef || !this.dialogRef.componentInstance) {
         this.openImageDialog();
       }
 
-      this.http.post('/fitting/upload/', formData,{responseType: 'blob'}).subscribe((response: Blob) => {
+      if (this.dialogRef && this.dialogRef.componentInstance) {
+        this.dialogRef.close();
+      }
+
+      this.http.post('/fitting/upload/', formData, { responseType: 'blob' }).subscribe((response: Blob) => {
         // Blob 데이터를 파일로 다운로드
         const blobUrl = window.URL.createObjectURL(response);
         this.responseImage = blobUrl;
         // Blob 데이터를 "image/png" MIME 타입으로 처리
+        if (this.dialogRef && this.dialogRef.componentInstance) {
+          this.dialogRef.close();
+        }
         this.openImageDialog();
       });
     }
   }
+
 
   openImageDialog(): void{
     const dialogRef = this.dialog.open(ResultComponent,{
