@@ -11,7 +11,7 @@
 
 .description{
   background-color: white;
-  min-height: 700px;   
+  min-height: 700px;
   width: 100%;
 }
 
@@ -34,7 +34,7 @@ a{
   position:sticky;
   z-index: 1;
   background-color: white;
-  
+
 }
 .app-data{
   display: flex;
@@ -48,7 +48,7 @@ a{
   height: 6vh;
   margin-top: 3px;
   margin-left: 3px;
-  
+
   max-height: 66px;
   border-bottom: solid 1px black;
   display: flex;
@@ -95,12 +95,13 @@ a{
 .BottomNavText{
   color: black;
   text-align: center;
-  font-size: 24px;
+  /*font-size: 16px;*/
   height: 30px;
   white-space: no-wrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp : 1; 
+  -webkit-line-clamp : 1;
+  margin-bottom: 5px;
 }
 
 
@@ -163,15 +164,13 @@ footer{
   height: 100%;
 }
 
-@media (max-width:480px) {
+/*@media (max-width:480px) {
   #BottomNav{
     height: 55px;
     font-size: 14px;
   }
 
   .BottomNavText{
-    font-size: 16px;
+    font-size: 30px;
   }
-
-
-}
+}*/
