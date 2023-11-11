@@ -114,8 +114,20 @@ export class FittingComponent implements OnInit {
     });
   }
 
+  /*applyCloth(imageSrc: string): void {
+    const clothesPreview = document.getElementById('clothesPreview') as HTMLImageElement;
+    clothesPreview.src = imageSrc;
+    this.clothesImg = imageSrc;
+  }*/
+
   applyCloth(imageSrc: string): void {
     const clothesPreview = document.getElementById('clothesPreview') as HTMLImageElement;
     clothesPreview.src = imageSrc;
+
+    this.http.get(imageSrc, { responseType: 'blob' }).subscribe(blob => {
+      this.clothesImg = new File([blob], "filename");
+    });
   }
+
+
 }
