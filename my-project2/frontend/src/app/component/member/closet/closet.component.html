@@ -58,7 +58,7 @@
         <br>
         <div class="detail">
           <div style="font-weight: bold" class="name">{{ item.name }}</div>
-          <div class="brandName">{{ item.brand }}</div>
+          <div class="brandName">{{ item.brand ? item.brand : '&nbsp;' }}</div>
           <div class="price">{{ item.price | number }}원</div>
         </div>
       <button class="styled-button" (click)="removeItem(item.id)">삭제</button>
