@@ -127,6 +127,13 @@ footer{
   opacity: 0.5;
 }
 
+.styled-button{
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+}
+
 .selected{
   background-color: #222;
 }
@@ -187,14 +194,21 @@ footer{
   margin-top: 10px;
 }
 
+.boxes-wrapper .box .button-group{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
 .boxes-wrapper .box {
   flex: 0 0 calc(33% - 10px);
   max-width: calc(28% - 10px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,7 +224,7 @@ footer{
 
 .box img {
   width: 99%;
-  height: auto;
+  height: 99%;
   text-align: center;
 }
 

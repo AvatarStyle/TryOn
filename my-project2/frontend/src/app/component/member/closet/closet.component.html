@@ -3,15 +3,15 @@
     <ng-container *ngFor="let post of posts; let postIndex = index">
       <div class="box">
         <img crossorigin="anonymous" (click)="goToPost(post.id)" [src]="'http://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]" class="d-block w-100" style="max-height: 300px;"/>
-        <div class="button-group">
+        <!--<div class="button-group">
           <button (click)="previous(postIndex)"><</button>
           <button (click)="next(postIndex, post.imagePaths.length)">></button>
-        </div>
+        </div>-->
         <!-- Post title -->
         <h2 class="title1"><br>{{ post.title }}</h2>
         <div class="button-group">
-          <button (click)="openUpdateForm(post)">수정</button>
-          <button (click)="deletePost(post.id)">삭제</button>
+          <button class="styled-button" (click)="openUpdateForm(post)">수정</button>
+          <button class="styled-button" (click)="deletePost(post.id)">삭제</button>
         </div>
       </div>
       <div *ngIf="updateFormOpened && selectedPost.id === post.id">
@@ -44,7 +44,7 @@
           <label for='thin'> 마른 체형</label>
         </div>
         <!-- 등록 버튼 -->
-        <br><button type= "submit" (click)="updatePost(selectedPost.id)">수정하기</button>
+        <br><button class="styled-button" type= "submit" (click)="updatePost(selectedPost.id)">수정하기</button>
       </div>
     </ng-container>
 </div>
@@ -58,10 +58,10 @@
         <br>
         <div class="detail">
           <div style="font-weight: bold" class="name">{{ item.name }}</div>
-          <div class="brandName">{{ item.brand }}</div>
+          <div class="brandName">{{ item.brand ? item.brand : '&nbsp;' }}</div>
           <div class="price">{{ item.price | number }}원</div>
         </div>
-      <button (click)="removeItem(item.id)">삭제</button>
+      <button class="styled-button" (click)="removeItem(item.id)">삭제</button>
     </div>
   </ng-container>
 </div>

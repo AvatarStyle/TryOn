@@ -6,7 +6,12 @@
       <img class="preview" id="modelPreview" src='/assets/modelSample.png' alt="모델 예시 이미지 ">
     </div>
     <div id="btn_group">
-      <button class="buttonSet" (click)="imageInput('modelInput')">이미지 불러오기</button>
+      <button class="buttonSet" (click)="imageInput('modelInput')">모델 이미지 선택</button>
+    </div>
+    <div id="btn_group">
+      기본 모델 선택
+      <button class="buttonSet" (click)="modelDefault('남성')">남성</button>
+      <button class="buttonSet" (click)="modelDefault('여성')">여성</button>
     </div>
   </div>
   <div class="fitting-box">
@@ -16,7 +21,7 @@
       <img class="preview" id="clothesPreview" src='/assets/clothesSample.png' alt="의상 이미지">
     </div>
     <div id="btn_group">
-      <button class="buttonSet" (click)="imageInput('clothesInput')">이미지 불러오기</button>
+      <button class="buttonSet" (click)="imageInput('clothesInput')">의상 이미지 선택</button>
     </div>
   </div>
 </div>
@@ -36,7 +41,7 @@
         </a>
       </div>
       <img class="item-image" [src]="item.imageUrl"/>
-      <div class="brandName">{{ item.brandName }}</div>
+      <div class="brandName">{{ item.brand ? item.brand : '&nbsp;' }}</div>
       <div class="name">{{ item.name }}</div>
     </div>
   </ng-container>

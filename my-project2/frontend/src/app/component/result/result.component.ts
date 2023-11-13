@@ -1,6 +1,7 @@
 import {Component, Inject, NgZone} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { ResultService } from './result.service';
 
 @Component({
   selector: 'app-result',
@@ -8,6 +9,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent {
+  data;
   generatedIMG;
   public imageExists = false;
   checkingImage;
@@ -15,16 +17,18 @@ export class ResultComponent {
 
   constructor(
     public dialogRef: MatDialogRef<ResultComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: {generatedIMG: string},
+    @Inject(MAT_DIALOG_DATA) public abc:any,
     private ngZone: NgZone,
-    private http: HttpClient
+    private http: HttpClient,
+    private resultService :ResultService
   ) 
   {
     //위치 설정
-    this.generatedIMG = data.generatedIMG;
     this.checkImage();
   }
   
+
+
   checkImage() {
     this.checkingImage = true;
     
@@ -33,20 +37,24 @@ export class ResultComponent {
     const checkInterval = setInterval(() => {
       
       try {
+        this.data = this.resultService.getData();
 
+        if (this.data) { 
+        this.generatedIMG = this.data.generatedIMG;
         img.src = this.generatedIMG;
 
         img.onload = () => {
           this.imageExists = true;
           clearInterval(checkInterval); // 파일이 존재하는 경우 setInterval 종료
         };
+      }
         
       } catch (error) {
         // 예외가 발생했을 때 실행되는 코드
         console.error('An error occurred:', error);
       }
 
-
+      console.log(this.data)
       img.onerror = () => {
         this.imageExists = false; // 이미지가 없을 경우 false로 설정
       };
