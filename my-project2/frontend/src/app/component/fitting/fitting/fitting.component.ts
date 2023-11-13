@@ -65,6 +65,24 @@ export class FittingComponent implements OnInit {
     this[imageId].click();
   }
 
+  modelDefault(gender: string) {
+    const modelPreview = document.getElementById('modelPreview') as HTMLImageElement;
+    let imagePath;
+
+    if (gender === '남성') {
+      imagePath = '/assets/test/modelSample/modelSample1.jpeg';
+    } else if (gender === '여성') {
+      imagePath = '/assets/test/modelSample/modelSample1.jpeg';
+    }
+
+    this.http.get(imagePath, { responseType: 'blob' }).subscribe(blob => {
+      this.modelImg = new File([blob], "filename");
+      modelPreview.src = URL.createObjectURL(blob);
+    });
+  }
+
+
+
   handleImageChange(event: Event, previewId: string, imgId: string, imageInput: string) {
     const fileInput = (event.target as HTMLInputElement);
     if (fileInput.files && fileInput.files.length > 0) {
