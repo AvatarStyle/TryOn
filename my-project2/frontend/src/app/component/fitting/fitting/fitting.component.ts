@@ -72,7 +72,7 @@ export class FittingComponent implements OnInit {
     if (gender === '남성') {
       imagePath = '/assets/test/modelSample/modelSample1.jpeg';
     } else if (gender === '여성') {
-      imagePath = '/assets/test/modelSample/modelSample1.jpeg';
+      imagePath = '/assets/test/modelSample/womanModel8.png';
     }
 
     this.http.get(imagePath, { responseType: 'blob' }).subscribe(blob => {
