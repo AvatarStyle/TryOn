@@ -13,10 +13,15 @@
           <img class="communityImg" crossorigin="anonymous" (click)="goToPost(post.id)" [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]"/>
         </div>
       </div>
-      <div>
-        <h5>{{ post.username }}</h5>
-        <h7 class="title">{{ post.title }}</h7>
-      </div>
+      <div class="FrameText">
+        <div class="FrameName">
+          <h5>{{ post.username }}</h5>
+        </div>
+        <div class="FrameDesc">
+          <h7>{{ post.title }}</h7>
+  
+        </div>
+            </div>
     </div>
   </ng-container>
 </div>

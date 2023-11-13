@@ -49,19 +49,19 @@ export class HomeComponent implements OnInit, OnDestroy{
   products: ProductDTO[];
   communities=[];
   brands1=[
-    {path:'1',name:'필루미네이트',url:'https://filluminate.com/index.html' },
+    {path:'1',name:'필루미네이트',url:'https://www.filluminate.com/index.html' },
     {path:'2',name:'나이키',url:'https://www.nike.com' },
-    {path:'3',name:'브라운 브레스',url:'https://brownbreath.com'},
-    {path:'4',name:'반스',url:'http://vans.co.kr' },
+    {path:'3',name:'브라운 브레스',url:'https://www.brownbreath.com'},
+    {path:'4',name:'반스',url:'http://www.vans.co.kr' },
     {path:'5',name:'폴로',url:'https://www.ralphlauren.co.kr'},
 
     ];
   brands2=[
-    {path:'6',name:'커버낫',url:'https://covernat.net'},
+    {path:'6',name:'커버낫',url:'https://www.covernat.net'},
     {path:'7',name:'더블유브이',url:'https://www.wvproject.co.kr'},
     {path:'8',name:'Lee',url:'https://www.lee.com'},
-    {path:'9',name:'아커버',url:'https://acover.co.kr'},
-    {path:'10',name:'어반드래스',url:'https://avandress.com'},
+    {path:'9',name:'아커버',url:'https://www.acover.co.kr'},
+    {path:'10',name:'어반드래스',url:'https://www.avandress.com'},
   ];
 
 

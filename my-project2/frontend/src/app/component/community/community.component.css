@@ -30,6 +30,21 @@ h1{
 
 }
 
+.FrameName {
+  display: flex;
+  justify-content: center;
+}
+
+
+.FrameDesc {
+  display: flex;
+  justify-content: center;
+}
+
+.FrameDesc > h7 {
+  width: 90%;
+
+}
 .imgBox{
   display: flex;
   justify-content: center;
@@ -50,6 +65,7 @@ h1{
 }
 
 .communityImg{
+  border-radius: 0%;
   left: 0;
   top:0;
   position:absolute;
