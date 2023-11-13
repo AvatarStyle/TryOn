@@ -9,7 +9,7 @@
     }
   },
   "/fitting/upload": {
-    "target":"http://tryon.duckdns.org:5000",
+    "target": "http://192.168.1.3:5000",
     "secure": false,
     "logLevel": "debug",
     "pathRewrite": {
