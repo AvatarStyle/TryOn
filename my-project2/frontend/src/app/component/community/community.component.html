@@ -8,8 +8,10 @@
 <div class="boxes-wrapper">
   <ng-container *ngFor="let post of posts; let postIndex = index">
     <div class="box">
-      <div class="ImgFrame">
-        <img class="communityImg" crossorigin="anonymous" (click)="goToPost(post.id)" [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]"/>
+      <div class="imgBox">
+        <div class="ImgFrame">
+          <img class="communityImg" crossorigin="anonymous" (click)="goToPost(post.id)" [src]="'https://tryon-399311.du.r.appspot.com/posts/images/' + post.imagePaths[currentIndices[postIndex]]"/>
+        </div>
       </div>
       <div>
         <h5>{{ post.username }}</h5>

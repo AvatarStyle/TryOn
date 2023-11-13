@@ -25,20 +25,28 @@ h1{
 .boxes-wrapper{
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  align-items:left;
+
+
 }
 
+.imgBox{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .box{
-  width: calc(50% - (2px * 2));
-  margin-left: 4px;
-
+  width: calc(50% - 2px);
+  display : flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .ImgFrame{
-  width: 100%;
+  width: 90%;
   height: 0;
   position: relative;
-  padding-bottom: 120%; /* 너비의 100% 만큼 높이 설정 */
+  padding-bottom: 108%; /* 너비의 100% 만큼 높이 설정 */
 }
 
 .communityImg{

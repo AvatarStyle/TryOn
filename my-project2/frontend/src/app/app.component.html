@@ -19,37 +19,52 @@
   <div id="BottomNav" *ngIf="BottomNav">
     <a [routerLink]="['/']" routerLinkActive="router-link-active">
       <div class="NavBox">
+        <div class="imgBox">
+          
         <img class=BottomNavIcon src='/assets/icons/home.png'>
+        </div>
         <div class="BottomNavText">홈</div>
       </div>
     </a>
     <a [routerLink]="['/fitting']" routerLinkActive="router-link-active">
       <div class="NavBox">
+        <div class="imgBox">
         <img class=BottomNavIcon src='/assets/icons/virtual.png'>
+        </div>
         <div class="BottomNavText">가상피팅</div>
       </div>
     </a>
     <a [routerLink]="['/community']" routerLinkActive="router-link-active">
       <div class="NavBox">
+        <div class="imgBox">
         <img class=BottomNavIcon src='/assets/icons/community.png'>
+        </div>
+        
         <div class="BottomNavText">커뮤니티</div>
       </div>
     </a>
     <a [routerLink]="['/signin']" routerLinkActive="router-link-active" *ngIf="!signService.isSignIn()">
       <div class="NavBox">
-        <img class=BottomNavIcon src='/assets/icons/login.png'>
+        <div class="imgBox">
+          <img class=BottomNavIcon src='/assets/icons/login.png'>
+        
+        </div>
         <div class="BottomNavText">로그인</div>
       </div>
     </a>
     <a [routerLink]="['/closet']" routerLinkActive="router-link-active" *ngIf="signService.isSignIn()">
       <div class="NavBox">
-        <img class=BottomNavIcon src='/assets/icons/closet.png'>
+        <div class="imgBox">
+          <img class=BottomNavIcon src='/assets/icons/closet.png'>
+        </div>
         <div class="BottomNavText">{{ username1 }}의 옷장</div>
       </div>
     </a>
     <a (click)="logout()" *ngIf="signService.isSignIn()">
       <div class="NavBox">
+        <div class="imgBox">
         <img class=BottomNavIcon src='/assets/icons/logout.png'>
+        </div>
         <div class="BottomNavText">로그아웃</div>
       </div>
     </a>
