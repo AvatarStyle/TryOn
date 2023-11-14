@@ -53,7 +53,7 @@
     <div class="brand" *ngFor="let brand of brands2" >
       <div class="brandContainer">
         <div class="brandDiv">
-          <img class=brandImg [src]="'/assets/brand/'+brand.path+'.png'">
+          <img class=brandImg (click)="goToBuyUrl(brand.url)" [src]="'/assets/brand/'+brand.path+'.png'">
         </div>
       </div>
       <div class="brandName">

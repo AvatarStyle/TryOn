@@ -26,7 +26,7 @@ import {OverlayComponent} from "./overlay/overlay.component";
   ]
 })
 
-export class HomeComponent implements OnInit, OnDestroy{
+export class HomeappComponent implements OnInit, OnDestroy{
 
   @ViewChild('overlayComponent') overlayComponent: OverlayComponent;
   currentImageId: number = 0;

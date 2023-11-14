@@ -21,25 +21,25 @@ export class ResultComponent {
     private ngZone: NgZone,
     private http: HttpClient,
     private resultService :ResultService
-  ) 
+  )
   {
     //위치 설정
     this.checkImage();
   }
-  
+
 
 
   checkImage() {
     this.checkingImage = true;
-    
+
     const img = new Image();
 
     const checkInterval = setInterval(() => {
-      
+
       try {
         this.data = this.resultService.getData();
 
-        if (this.data) { 
+        if (this.data) {
         this.generatedIMG = this.data.generatedIMG;
         img.src = this.generatedIMG;
 
@@ -48,7 +48,7 @@ export class ResultComponent {
           clearInterval(checkInterval); // 파일이 존재하는 경우 setInterval 종료
         };
       }
-        
+
       } catch (error) {
         // 예외가 발생했을 때 실행되는 코드
         console.error('An error occurred:', error);
