@@ -37,11 +37,19 @@ export class HomeComponent implements OnInit, OnDestroy{
   currentImageId: number = 0;
   imageRoot: String = "assets/sliderImage/"
   imageList: Array<String> = [
+    this.imageRoot + "woman1.png",
+    this.imageRoot + "woman2.png",
+    this.imageRoot + "woman3.png",
+    this.imageRoot + "woman4.png",
+    this.imageRoot + "man1.png",
+    this.imageRoot + "man2.png"
+  ]
+  /*imageList: Array<String> = [
     this.imageRoot + "IMG_4124.PNG",
     this.imageRoot + "IMG_4125.PNG",
     this.imageRoot + "IMG_4126.PNG",
     this.imageRoot + "제목 7.png"
-  ]
+  ]*/
 
 
   currentIndices = [];
